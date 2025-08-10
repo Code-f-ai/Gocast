@@ -1,0 +1,108 @@
+@use '@styles/utils' as uti;
+
+.playing{
+    margin: 3.5rem 0 8rem 0;
+    overflow: hidden;
+
+    .playing-main{
+        padding-top: 1.8rem;
+        position: relative;
+    }
+    .playing-wrapper{
+        @include uti.size(100%,null);
+        aspect-ratio: 33 / 25;
+        border-radius: 1rem;
+        filter: brightness(0.3);
+        background: uti.$Secondary-color-black-90 url(@assets/images/playing-bg1.png) ;
+    }
+    .playing-main-content{
+        @include uti.flexbox(center,center,null,column);
+        position: absolute;
+        top: 0;
+        @include uti.size(100%);
+    }
+    .playing-main-bg2{
+        position: absolute;
+        // top: -3.5rem;
+        // left: 24rem;
+        top: -10%;
+        right: -10%;
+        @include uti.size(14.1rem,15.5rem);
+        object-fit: cover
+    }
+    .playing-main-avatar{
+        @include uti.size(10.4rem);
+        object-fit: cover;
+        border-radius: 100rem;
+    }
+    .playing-main-title{
+        max-width: 100%;
+        color: uti.$white-color;
+        margin-top: 0.25rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .playing-main-desc{
+        @include uti.flexbox(center,center,null);
+        @include uti.Typography(500,1.2rem,1.8rem);
+        color: uti.$gray-color-2;
+        margin-bottom: 0.5rem;
+        
+        & span:first-child{
+            @include uti.textellip(1,null);
+            max-width: 7rem;
+            
+        }
+        & span:last-child{
+            position: relative;
+            @include uti.textellip(1,null);
+            max-width: 8.6rem;
+            
+            &::before{
+                content: "";
+                vertical-align: middle;
+                display: inline-block;
+                @include uti.size(0.3rem);
+                border-radius: 100rem;
+                margin: 0 0.5rem;
+                background-color: uti.$gray-color-2;
+            }
+            
+        }
+    }
+    .playing-main-playing{
+        @include uti.flexbox(center,center,8px);
+        margin-bottom: 0.5rem;
+    }
+    .playing-time-stars,
+    .playing-time-end{
+        max-width: 5rem;
+        @include uti.Typography(400,1.2rem,auto);
+        @include uti.textellip(1,null);
+        color: uti.$white-color;
+    }
+    .playing-control-panel{
+        @include uti.flexbox(center,center,2rem);
+
+        & img:not(:nth-child(4)){
+            @include uti.size(1.8rem);
+            object-fit: cover;
+            cursor: pointer;
+        }
+        & img:nth-child(4){
+            @include uti.size(3rem);
+            object-fit: cover;
+            cursor: pointer;
+        }
+    }
+
+}
+
+@include uti.media(max, 380px){
+    .playing .playing-main-avatar{
+        @include uti.size(6.5rem);
+    }
+    .playing-main-playing img{
+        max-width: 65%;
+    }
+}

@@ -1,0 +1,13 @@
+@use '@styles/utils' as uti;
+
+.btn{
+    @include uti.flexbox(center,center);
+    @include uti.Typography(600,1.5rem,2.2rem);
+    flex-shrink: 0;
+    border-radius: 0.8rem;
+
+    color: uti.$white-color;
+    text-transform: capitalize;
+    background-color: uti.$primary-color;
+    cursor: pointer;
+}

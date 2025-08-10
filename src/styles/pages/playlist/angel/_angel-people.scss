@@ -1,0 +1,97 @@
+@use '@styles/utils' as uti;
+
+.angel-section-people{
+    padding: 1.6rem 2rem 2rem 2rem;
+    border-radius: 1rem;
+    border: 1px solid var(--bg-border-dark,uti.$natural-color-2);
+}
+
+.angel-people-header{
+    @include uti.flexbox(center,space-between);
+    border-bottom: 1px solid var(--bg-border-dark,uti.$natural-color-2);
+    padding-bottom: 1.8rem;
+    margin-bottom: 1.8rem;
+    & h3{
+        @include uti.Typography(600,1.5rem,2.2rem);
+        @include uti.textellip(1,null);
+        max-width: 17.5rem;
+        // color: uti.$black-color-1;
+        color: var(--color-trending-dark,uti.$black-color-1);
+    }
+    .angel-people-view{
+        @include uti.flexbox(center,null,0.5rem);
+        @include uti.Typography(400,1.3rem,1.9rem);
+        color: uti.$gray-color-2;
+        text-transform: capitalize;
+        cursor: pointer;
+        & i{
+            color: uti.$gray-color-1;
+            font-size: 1.5rem;
+        }
+        & span{
+            @include uti.textellip(1,null);
+            max-width: 7.5rem;
+        }
+    }
+
+}
+.angel-people-body{
+    @include uti.flexbox(center,null,0.3rem);
+    flex-wrap: wrap;
+    row-gap: 1.6rem;
+}
+
+.angel-people-item{
+    @include uti.size(3rem);
+    border-radius: 100rem;
+    border: 1.5px solid var( --bg-dark-90,uti.$white-color);
+    position: relative;
+    cursor: pointer;
+}
+
+.angel-people-avatar{
+    @include uti.size(100%);
+    object-fit: cover;
+    border-radius: inherit;
+}
+
+.angel-people-tick{
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translate(-50%,-50%);
+    @include uti.size(1rem);
+    object-fit: cover;
+    display: none;
+}
+
+
+@for $i from 1 through 16 {
+    .angel-people-item:nth-child(#{$i}){
+        @if $i == 1 or $i == 7 or $i == 9 {
+            background-color: uti.$Secondary-color-white-40;
+        }
+        @if $i == 2 or $i == 5 or $i == 10 or $i == 13 {
+            background-color: uti.$primary-color-shades-5;
+        }
+        @if $i == 3 or $i == 11 {
+            background-color: uti.$Secondary-color-white-70;            
+        }
+        @if $i == 4 or $i == 12 {
+            background-color: uti.$Secondary-color-white-20;
+        }
+        @if $i == 6 or $i == 14 {
+            background-color: uti.$Support-Color-1nd-10;
+        }
+        @if $i == 8 or $i == 16 {
+            background-color: uti.$Support-Color-2nd-50;
+        }
+        @if $i == 1 or $i == 3 or $i == 6 or $i == 7 or $i == 9 or $i == 10 or $i == 13 or $i == 15 {
+            & .angel-people-tick{display: inline-block;};
+        }
+        @if $i == 15 {
+            background-color: uti.$primary-color-shades-1;
+        }
+    }
+}
+

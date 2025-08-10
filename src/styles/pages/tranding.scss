@@ -1,0 +1,49 @@
+// ----------------------------------
+// 🎯 FONT CONFIG
+// ----------------------------------
+
+@use '@fonts/font_face';
+
+
+// ----------------------------------
+// 🎨 VENDORS
+// ----------------------------------
+
+@use '@fontawesome/webfonts/_font_face_fontawesome';
+@use '@fontawesome/fontawesome.scss' ;
+@use '@fontawesome/brands.scss' ;
+@use '@fontawesome/regular.scss' ;
+@use '@fontawesome/solid.scss' ;
+@use '@fontawesome/v4-shims.scss' ;
+
+
+// ----------------------------------
+// 🔧 BASE STYLES
+// ----------------------------------
+
+@use '@styles/base';
+
+
+// ----------------------------------
+// 🧩 COMPONENTS
+// ----------------------------------
+
+@use '@styles/components';
+
+
+// ----------------------------------
+// 🧱 LAYOUT SYSTEM
+// ----------------------------------
+
+@use '@styles/layout';
+
+
+
+// ----------------------------------
+// 📄 PAGE SPECIFIC
+// ----------------------------------
+
+
+@use '@styles/utils' as *;
+
+

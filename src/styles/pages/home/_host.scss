@@ -1,0 +1,77 @@
+@use '@styles/utils' as uti;
+
+.host{
+    padding-bottom: 2.8rem;
+    // .host-heading{
+    //     max-width: 15rem;
+    //     @include uti.Typography(700,1.6rem,2.4);
+    //     @include uti.textellip(1,null);
+    // }
+    .host-list{
+        @include uti.flexbox(center, space-between);
+        padding-top: 2.5rem;
+
+        & .host-item:nth-child(1) .host-avatar{
+            background-color: uti.$Support-Color-2nd-50;
+        }
+        & .host-item:nth-child(2) .host-avatar{
+            background-color: uti.$Support-Color-1nd-10;
+        }
+        & .host-item:nth-child(3) .host-avatar{
+            background-color: uti.$primary-color-shades-5;
+        }
+        & .host-item:nth-child(4) .host-avatar{
+            background-color: uti.$Secondary-color-white-20;
+        }
+        & .host-item:nth-child(5) .host-avatar{
+            background-color: uti.$Support-Color-1nd-50;
+        }
+        & .host-item:nth-child(6) .host-avatar{
+            background-color: uti.$Secondary-color-white-40;
+        }
+        & .host-item:nth-child(7) .host-avatar{
+            background-color: uti.$primary-color-shades-5;
+        }
+    }
+    .host-item{
+        max-width: 7rem;
+        min-height: 9.7rem;
+        @include uti.flexbox(center,space-between,0.7rem,column);
+        text-align: center;
+    }
+    .host-avatar{
+        @include uti.size(7rem);
+        border-radius: 50%;
+        position: relative;
+        border: 1px solid uti.$Secondary-color-white-10;
+        & img{
+            @include uti.size(100%);
+            object-fit: cover;
+            border-radius: 50%;
+        }
+        &::after{
+            content: "";
+            @include uti.positon(0);
+            background-color: transparent;
+            border-radius: 50%;
+            border: 2px solid var(--bg-dark, uti.$white-color);
+
+        }
+    }
+    .host-name{
+        color: uti.$gray-color-1;
+        text-transform: capitalize;
+        @include uti.Typography(400,1.4rem,2rem);
+        @include uti.textellip(1);
+    }
+}
+
+@include uti.media(max, 610px){
+    .host .host-list{
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-snap-stop: always;
+        @include uti.hideScroll();
+        gap: 2rem;
+    }
+}

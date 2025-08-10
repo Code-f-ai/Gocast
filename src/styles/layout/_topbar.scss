@@ -1,0 +1,172 @@
+@use '@styles/utils' as uti;
+
+.topbar{
+    @include uti.flexbox(center,space-between,null);
+    padding-bottom: 4.3rem;
+    // background-color: var(--bg-dark,uti.$white-color);
+    background-color: inherit;
+    
+    .topbar-left{
+        @include uti.flexbox(center,null,2.4rem);
+    }
+    .icon-show-sidebar{
+        @include uti.size(4.8rem);
+        display: none;
+        cursor: pointer;
+
+        & img{
+            @include uti.size(100%);
+            object-fit: cover;
+        }
+    }
+    
+    .topbar-search{
+        @include uti.flexbox(center,center,1.2rem);
+        flex: 0 1 36rem;
+        padding: 1.2rem 2rem;
+        border-radius: 1.2rem;
+        min-width: 36rem;
+        // background-color: uti.$natural-color-2;
+        background-color: var(--bg-topbar-search-dark, uti.$natural-color-2);
+    }
+    .search-icon{
+        @include uti.size(2.4rem);
+        cursor: pointer;
+    }
+    .search-input{
+        flex: 1;
+        height: 2.2rem;
+        border: none;
+        @include uti.Typography($weight: 500,$line:2.2rem,$size:1.5rem);
+        background-color: transparent;
+        caret-color: uti.$primary-color;
+        // color: uti.$primary-color;
+        color: var(--color-trending-dark, uti.$primary-color);
+        @include uti.placeholder(uti.$gray-color-2);
+
+    }
+
+    .topbar-right{
+        @include uti.flexbox(center,normal,2.4rem);
+         min-width: 33rem;
+        & > *{  // trỏ tói tất cả các con trực tiếp 
+            flex-shrink: 0;
+        }
+    }
+    
+    .button-upload{
+        @include uti.flexbox(center,flex-start,0.6rem);
+        justify-content: start;
+        padding: 1.2rem 1.6rem;
+        max-width: 11.2rem;
+        & img{
+            flex: 0 0 2.4rem;
+            height: 2.4rem;
+        }
+        & span{
+            flex-grow: 1;
+            @include uti.Typography(600,1.5rem,2.2rem);
+            @include uti.textellip(1);
+        }
+    }
+    .topbar-action{
+        @include uti.flexbox(center,center,null);
+        flex: 0 0 4.8rem;
+        height: 4.8rem;
+    }
+    .message-icon{
+        position: relative;
+        cursor: pointer;
+
+        &::after{
+            content: '';
+            @include uti.positon(0,0,auto,auto);
+            @include uti.size(1.2rem);
+            border: 2px solid uti.$white-color;
+            border-radius: 50%;
+            background-color: uti.$Support-Color-2nd ;
+            // display: none;
+        }
+    }
+    .bell-icon{
+        position: relative;
+        cursor: pointer;
+
+        &::after{
+            content: '';
+            @include uti.positon(0,0,auto,auto);
+            @include uti.size(1.2rem);
+            border: 2px solid uti.$white-color;
+            border-radius: 50%;
+            background-color: uti.$Support-Color-2nd ;
+        }
+    }
+    .topbar-profile{
+        flex: 0 0 4.8rem;
+        height: 4.8rem;
+        border-radius: 50%;
+        cursor: pointer;
+        
+        & img{
+            @include uti.imgcover;
+            border-radius: 50%;
+        }
+    }
+
+
+    .topbar-logo{
+        @include uti.Typography(700,2.8rem,2.5rem);
+        // padding-left: 2rem;
+        display: none;
+        & img{
+            @include uti.size(17px);
+        }
+        & span{
+            font-family: uti.$font-base;
+            color: var(--color-trending-dark, uti.$black-color)
+        }
+    }
+}
+
+@include uti.media(max, 1100px){
+    .topbar .icon-show-sidebar{
+        display: block;
+    }
+}
+
+@include uti.media(max, 900px){
+    .topbar .topbar-search{
+        display:none;
+    }
+    .topbar .button-upload{
+        display:none;
+    }
+    .topbar .topbar-action{
+        display: none;
+    }
+    .topbar .topbar-logo{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .topbar .topbar-profile{
+        flex: 0 0 4.8rem;
+        height: auto;
+        aspect-ratio: 1;
+    }
+    
+    .topbar .topbar-right{
+        justify-content: flex-end;
+    }
+    
+    .topbar .topbar-right{
+        min-width: auto;
+    }
+
+    .topbar .icon-show-sidebar{
+        display: none;
+    }
+}
+
+

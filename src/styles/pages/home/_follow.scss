@@ -1,0 +1,106 @@
+@use '@styles/utils' as uti;
+
+.follow{
+    margin-top: 3.5rem;
+
+    .follow-header{
+        @include uti.flexbox(center,space-between,null);
+    }
+    .follow-main{
+        padding-top: 2rem;
+        @include uti.flexbox(center,center,2rem,column);
+    }
+    .follow-main-item{
+        width: 100%;
+        @include uti.flexbox(center,space-between,0);
+    }
+    .follow-item-profile{
+        @include uti.flexbox(center,null,1.1rem);
+    }
+    .follow-item-desc{
+        @include uti.flexbox(null,center,0.3rem,column);
+    }
+    .follow-item-name,
+    .follow-item-contact{
+        max-width: 12rem;
+    }
+    .follow-avatar-wrapper{
+        border: 1px solid uti.$Secondary-color-white-60;
+        @include uti.size(5rem);
+        border-radius: 0.6rem;
+        position: relative;
+        &::before{
+            content: "";
+            @include uti.positon(0);
+            @include uti.size(100%);
+            border-radius: inherit;
+            border: 2px solid uti.$white-color;
+            background-color: transparent;
+        }
+    }
+    .follow-item-avatar{
+        @include uti.size(100%);
+        border-radius: inherit;
+        object-fit: cover;
+    }
+    .follow-button{
+        padding: 0.6rem 1.8rem;
+    }
+
+    .follow-main-item:nth-child(3){
+        .follow-button{
+            border: 1px solid uti.$gray-color-5;
+            background-color: uti.$white-color;
+            color: uti.$gray-color-6;
+        }
+    }
+}
+
+@include uti.media(max, 1275px){
+    .follow .follow-item-profile{
+        width: 65%;
+        gap: 1.25rem;
+        align-items: flex-start;
+    }
+
+    .follow .follow-avatar-wrapper{
+        flex-shrink: 0;
+        width: 15%;
+        height: auto;
+        aspect-ratio: 1;
+        min-width: 5rem;
+    }
+    .follow .follow-item-desc{
+        gap: 0.75rem;
+        flex-grow: 1;
+    }
+    .follow .follow-item-name, .follow .follow-item-contact{
+        max-width: 100%;
+    }
+}
+
+@include uti.media(max, 1100px){
+    .follow .follow-item-profile{
+        gap: 1.5rem;
+    }
+    .follow .follow-item-desc{
+        gap: 1rem;
+    }
+}
+
+@include uti.media(max, 900px){
+    .follow .follow-item-profile{
+        gap: 1rem;
+    }
+    .follow .follow-item-desc{
+        gap: 0.5rem;
+    }
+}
+@include uti.media(max, 380px){
+    .follow .follow-item-profile{
+        gap: 0.5rem;
+    }
+    .follow .follow-item-desc{
+        gap: 0;
+    }
+}

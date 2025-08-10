@@ -1,0 +1,89 @@
+@use '@styles/utils' as uti;
+// ----------------------------------
+// 🎨 VENDORS
+// ----------------------------------
+
+@use '@fontawesome/webfonts/_font_face_fontawesome';
+@use '@fontawesome/fontawesome.scss' ;
+@use '@fontawesome/brands.scss' ;
+@use '@fontawesome/regular.scss' ;
+@use '@fontawesome/solid.scss' ;
+@use '@fontawesome/v4-shims.scss' ;
+
+// ----------------------------------
+// 🎯 FONT CONFIG
+// ----------------------------------
+
+@use '@fonts/font_face';
+
+// ----------------------------------
+// 🔧 BASE STYLES
+// ----------------------------------
+
+@use '@styles/base';
+
+
+// ----------------------------------
+// 🧩 COMPONENTS
+// ----------------------------------
+
+@use '@styles/components';
+
+
+// ----------------------------------
+// 🧱 LAYOUT SYSTEM
+// ----------------------------------
+
+@use '@styles/layout';
+
+
+
+@use '@styles/themes';
+// ----------------------------------
+// 📄 PAGE SPECIFIC
+// ----------------------------------
+
+@forward './host';
+@forward './trending';
+@forward './feed';
+@forward './podcast';
+@forward './follow';
+@forward './history';
+@forward './topic';
+@forward './playing';
+// @use '@styles/layout/nav-menu';
+
+.main{
+    padding: 2.4rem 6rem 0rem 5.6rem;
+    container-name: main;
+    container-type: inline-size;
+    .main-left{
+        overflow: hidden;
+    }
+    
+}
+.main-container{
+    display: grid;
+    grid-template-columns: 1fr 33rem;
+    column-gap: 6rem;
+    position: relative;
+}
+
+@include uti.media(max, 1275px){
+    .main-container{
+        grid-template-columns: 1fr;
+        row-gap: 6rem;
+    }
+}
+@include uti.media(max, 1100px){
+    .wrapper{
+        grid-template-columns: 1fr;
+    }
+}
+
+@include uti.media(max, 900px){
+    .main{
+        padding: 2.4rem 2rem 2.4rem 2rem;
+    }
+}
+

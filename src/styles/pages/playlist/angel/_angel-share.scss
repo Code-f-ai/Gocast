@@ -1,0 +1,96 @@
+@use '@styles/utils' as uti;
+
+.angel-share{
+    @include uti.flexbox(flex-start,null,1.5rem,column);
+    width: 100%;
+    padding: 1.8rem 1.5rem;
+    box-shadow: var(--box-shadow-1), var(--box-shadow-2);
+    border-radius: 1rem;
+}
+
+.angel-share-top{
+    @include uti.flexbox(center,null,1rem);
+    width: 100%;
+    padding-bottom: 1.4rem;
+    border-bottom: 1px solid var(--bg-border-dark, uti.$natural-color-1);
+
+    & img{
+        @include uti.size(2rem);
+        object-fit: cover;
+        flex-shrink: 0;
+    }
+
+    & h3{
+        @include uti.Typography(500,1.8rem,2.6rem);
+        @include uti.textellip(1);
+        text-transform: capitalize;
+        color: var(--color-trending-dark,uti.$black-color-1);
+    }
+}
+
+.angel-share-body{
+    @include uti.flexbox(null,null,1.2rem,column);
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
+    
+    .share-body-icon{
+        @include uti.flexbox(center,space-between);
+        cursor: pointer;
+        
+        & img{
+            @include uti.size(3rem);
+            object-fit: cover;
+        }
+    }
+}
+
+.share-body-link{
+    @include uti.flexbox(null,null,0.8rem,column);
+    @include uti.Typography(400,1.2rem,1.8rem);
+    color: uti.$gray-color-2;
+}
+
+.share-body-link-wrapper{
+    @include uti.hideScroll;
+    max-width: 100%;
+    overflow-x: auto;
+    
+    padding: 0.6rem 1rem;
+    border-radius: 0.6rem;
+    background-color: var(--bg-trending-dark,uti.$natural-color-1);
+
+    & p{
+        white-space: nowrap;
+    }
+}
+
+.share-body-button{
+    @include uti.flexbox(center,center,0.6rem);
+    width: 100%;
+    padding: 0.6rem 1.3rem;
+    border-radius: 0.8rem;
+    cursor: pointer;
+    background-color: var(--bg-trending-dark,uti.$natural-color-1);
+
+    & img{
+        @include uti.size(1.2rem,1.3rem);
+        object-fit: cover;
+    }
+
+    & span{
+        @include uti.textellip(1,null);
+        max-width: 6rem;
+    }
+}
+@include uti.media(max, 1350px){
+    .share-body-link{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
+@include uti.media(max, 500px){
+    .angel-share{
+        display: none;
+    }
+}

@@ -1,0 +1,127 @@
+@use '@styles/utils' as uti;
+.sidebar{
+    padding: 4.8rem 3rem;
+    border-right: 1px solid  var(--bg-border-dark,uti.$gray-color-4);
+    background-color: inherit;
+    // background-color: var(--bg-dark,uti.$white-color);
+
+    .logo{
+        display: flex;
+        align-items: center;
+        @include uti.Typography(700,2.8rem,2.5rem);
+        margin-bottom: 4.4rem;
+        padding-left: 2rem;
+        & img{
+            @include uti.size(17px);
+        }
+        & span{
+            font-family: uti.$font-base;
+            color: var(--color-trending-dark, uti.$black-color)
+        }
+    }
+    .menu{
+        @include uti.flexbox(null,null,0.6rem,column);
+
+        &:not(:last-child)::after{
+            content: "";
+            display: block; // * thay cho positon ab cũng tốt đỡ lỗi  -webkit-box
+            height: 1px;
+            // background-color: uti.$gray-color-4;
+            background-color: var(--bg-border-dark,uti.$gray-color-4);
+            margin: 2.6rem 0;
+        }
+    }
+    .menu-item{
+        padding: 0.8rem 3rem 0.8rem 2rem;
+        border-radius: 1rem;
+        transition: all 0.25s ease-in-out;
+        &:hover{
+            background: linear-gradient(to right, #455cf5, #7241f0);
+        }
+        &:hover .menu-text{
+            color: uti.$white-color;
+        }
+    }
+    .menu-link{
+        @include uti.flexbox(center, null, 1rem);
+    }
+    
+    .menu-icon{
+        flex: 0 1 2.4rem;
+        height: 2.4rem;
+        // aspect-ratio: 1 / 1; chỉ dùng cho thẻ block 
+        // object-fit: cover;
+    }
+    
+    .menu-text{
+        color: uti.$gray-color-3;
+        transition: all 0.25s ease-in-out;
+        @include uti.Typography(500,1.4rem,2rem);
+        @include uti.textellip(1);
+    }
+    
+    
+    .menu-title{
+        color: uti.$gray-color-3;
+        padding: 0 2.1rem;
+        margin-bottom: 1rem;
+        @include uti.Typography(400,1.4rem,2rem);
+        @include uti.textellip(1);
+    }
+
+}
+
+.wrapper .show-sidebar{
+    transform: translateX(-100%) translateX(100%);
+    z-index: 10;
+}
+
+@include uti.media(max, 1100px){
+    .sidebar{
+        width: 256px;
+        position: fixed;
+        top: 0.1px;
+        bottom: 0rem;
+        transform: translateX(-100%);
+        background-color: var(--bg-dark-90, rgba(uti.$white-color,0.9));
+    }
+    
+}
+
+@include uti.media(max, 900px){
+    .sidebar{
+        width: 256px;
+        position: fixed;
+        top: 0.1px;
+        bottom: 8rem;
+        transform: translateX(-100%);
+        background-color: var(--bg-dark-90, rgba(uti.$white-color,0.9));
+    }
+}
+
+@include uti.media(max, 380px){
+    .sidebar{
+        width: 256px;
+        position: fixed;
+        top: 0.1px;
+        bottom: 8rem;
+        padding: 1rem 3rem;
+        transform: translateX(-100%);
+        background-color: var(--bg-dark-90, rgba(uti.$white-color,0.9));
+    }
+    .sidebar .menu-item{
+        padding: 0.3rem 3rem 0.3rem 2rem;
+    }
+    .sidebar .menu:not(:last-child)::after{
+        margin: 1rem 0;
+    }
+    .sidebar .logo{
+        margin-bottom: 1rem;
+    }
+    .sidebar .menu-text{
+        @include uti.Typography(500,1.2rem,1.6rem);
+    }
+    .sidebar .logo{
+        @include uti.Typography(700,2rem,2rem);
+    }
+}

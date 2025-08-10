@@ -1,0 +1,91 @@
+@use '@styles/utils' as uti;
+
+.angel-host{
+    @include uti.flexbox(flex-start,null,1.4rem,column);
+    width: 100%;
+    padding: 1.8rem 1.5rem;
+    box-shadow: var(--box-shadow-1), var(--box-shadow-2);
+    border-radius: 1rem;
+}
+
+.angel-host-top{
+    @include uti.flexbox(center,null,1rem);
+    width: 100%;
+    padding-bottom: 1.4rem;
+    border-bottom: 1px solid var(--bg-border-dark, uti.$natural-color-1);
+
+    & img{
+        @include uti.size(2rem);
+        object-fit: cover;
+        flex-shrink: 0;
+    }
+
+    & h3{
+        @include uti.Typography(500,1.8rem,2.6rem);
+        @include uti.textellip(1);
+        // color: uti.$black-color-1;
+        color: var(--color-trending-dark,uti.$black-color-1);
+    }
+}
+.angel-host-body{
+    max-width: 16.7rem;
+    @include uti.flexbox(center,null,1rem);
+
+    & img{
+        @include uti.size(4.4rem);
+        object-fit: cover;
+        border-radius: 100rem;
+        flex-shrink: 0;
+    }
+}
+
+.angel-host-content{
+    @include uti.flexbox(flex-start,null,0,column);
+
+    & p{
+        @include uti.Typography(500,1.6rem,2.4rem);
+        @include uti.textellip(1);
+        text-transform: capitalize;
+        color: var(--color-trending-dark,uti.$black-color-1);
+
+    }
+    
+    & span{
+        @include uti.Typography(400,1.3rem,1.9rem);
+        @include uti.textellip(1);
+        color: uti.$gray-color-2;
+    }
+}
+
+.angel-host-button{
+    @include uti.flexbox(center,center);
+    width: 100%;
+    aspect-ratio: 210 / 34;
+    border-radius: 0.8rem;
+    cursor: pointer;
+    background-color: uti.$Support-Color-2nd;
+    
+    & span{
+        @include uti.Typography(500,1.5rem,2.2rem);
+        @include uti.textellip(1,null);
+        color: uti.$white-color;
+        max-width: 7rem;
+        text-transform: capitalize;
+
+    }
+}
+
+@include uti.media(max, 1350px){
+    .angel-host-button{
+        width: 75%;
+    }
+    .angel-host{
+        align-items: center;
+    }
+}
+
+@include uti.media(max, 500px){
+    .angel-host{
+        display: none;
+    }
+}

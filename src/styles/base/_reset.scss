@@ -1,0 +1,58 @@
+// base/_reset.scss
+@use "../utils" as *;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  font: inherit;
+}
+
+html {
+  font-size: 62.5%;
+
+  // overflow: auto;
+  // -ms-overflow-style: none;      // Cho IE
+  // scrollbar-width: none;         // Cho Firefox
+
+  // &::-webkit-scrollbar {
+  //   display: none;               // Cho Chrome, Safari
+  // }
+}
+
+// body {
+//   // background-color: $color-bg;
+//   // color: $title-color;
+
+// }
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+}
+
+input, button, textarea, select {
+  font: inherit;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+

@@ -1,0 +1,290 @@
+@use '@styles/utils' as uti;
+// ----------------------------------
+// 🎨 VENDORS
+// ----------------------------------
+
+@use '@fontawesome/webfonts/_font_face_fontawesome';
+@use '@fontawesome/fontawesome.scss' ;
+@use '@fontawesome/brands.scss' ;
+@use '@fontawesome/regular.scss' ;
+@use '@fontawesome/solid.scss' ;
+@use '@fontawesome/v4-shims.scss' ;
+
+// ----------------------------------
+// 🎯 FONT CONFIG
+// ----------------------------------
+
+@use '@fonts/font_face';
+
+// ----------------------------------
+// 🔧 BASE STYLES
+// ----------------------------------
+
+@use '@styles/base';
+
+
+// ----------------------------------
+// 🧩 COMPONENTS
+// ----------------------------------
+
+@use '@styles/components';
+
+
+// ----------------------------------
+// 🧱 LAYOUT SYSTEM
+// ----------------------------------
+
+@use '@styles/layout';
+
+
+
+@use '@styles/themes';
+// ----------------------------------
+// 📄 PAGE SPECIFIC
+// ----------------------------------
+
+
+.main{
+    padding: 2.4rem 6rem 2.4rem 5.6rem;
+
+    .topbar .logo{
+        display: none;
+    }
+}
+
+.leaderboard-header{
+    
+    & .leaderboard-header-title{
+        @include uti.Typography(600,2.2rem,2.4rem);
+        color: var(--color-trending-dark,uti.$black-color-1);
+        text-transform: capitalize;
+    }
+    
+    .leaderboard-header-button{
+        margin: 3rem 0;
+        @include uti.flexbox(center,null,2rem);
+    }
+    .leaderboard-button{
+        padding: 0.6rem 2rem;
+        @include uti.Typography(500,1.6rem,2.4rem);
+        color: var(--color-trending-dark,uti.$black-color-1);
+        background-color: uti.$natural-color-2;
+        background-color: var(--bg-topbar-search-dark, uti.$natural-color-2);
+        transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+        border-radius: 0.6rem;
+
+        &:hover{
+            color: uti.$white-color;
+            background-color: uti.$primary-color;
+        }
+
+    }
+
+}
+
+.main-container{
+  container-name: main-container;
+  container-type: inline-size;
+}
+.leaderboard {
+  width: 100%;
+  // min-width: 1068px;
+  margin: 0 auto;
+  margin-bottom: 6rem;
+
+.leaderboard-icon{
+    & img{
+        @include uti.size(4rem);
+        object-fit: cover;
+    }
+    & p{
+        @include uti.size(4rem);
+        @include uti.flexbox(center, center);
+        @include uti.Typography(500,1.6rem,2.4rem);
+        color: var(--color-trending-dark,uti.$black-color-1);
+    }
+}
+
+
+  tr:nth-child(-n+3) .leaderboard-icon{
+      p {
+        display: none;
+      }
+  }
+
+  tr:nth-child(n+4) .leaderboard-icon{
+      img {
+        display: none;
+    }
+  }
+
+
+  .leaderboard-profile {
+    @include uti.flexbox(center, flex-start, 1rem);
+  }
+  .desc{
+    & p:first-child{
+        @include uti.Typography(500,1.6rem,2.4rem);
+        color: var(--color-trending-dark,uti.$black-color-1);
+        @include uti.textellip(1);
+      }
+      & p:last-child{
+        @include uti.Typography(400,1.4rem,2rem);
+        @include uti.textellip(1);
+        color: uti.$gray-color-1;
+        // color: var(--color-trending-dark,uti.$gray-color-1);
+    }
+  }
+
+  .img-wrapper {
+    @include uti.size(3.8rem);
+    border-radius: 100rem;
+    flex-shrink: 0;
+  }
+
+  .image-avatar {
+    @include uti.size(100%);
+    border-radius: inherit;
+    object-fit: cover;
+    cursor: pointer
+  }
+
+
+  .name {
+    @include uti.Typography(500,1.6rem,2.4rem);
+    @include uti.textellip(1);
+    color: var(--color-trending-dark,uti.$black-color-1);
+    
+}
+
+.view,.star,.comment{
+    text-align: center;
+    @include uti.flexbox(center,center,1rem);
+    
+    & img{
+        @include uti.size(2rem);
+        object-fit: cover;
+        cursor: pointer;
+    }
+    & span{
+        max-width: 10rem;
+        @include uti.Typography(500,1.5rem,2.2rem);
+        @include uti.textellip(1,null);
+        color: var(--color-trending-dark,uti.$black-color-1);
+    }
+  }
+
+   // Avatar background color theo dòng chẵn/lẻ
+  tbody tr:nth-child(odd) .img-wrapper {
+      background-color: uti.$Secondary-color-white-40;
+  }
+
+  tbody tr:nth-child(even) .img-wrapper {
+    background-color: uti.$primary-color-shades-5;
+  }
+
+  .follow {
+    color: uti.$white-color;
+    background-color: uti.$Support-Color-2nd;
+    padding: 0.3rem 1.6rem;
+    border-radius: 0.4rem;
+    cursor: pointer
+  }
+
+  .link {
+    @include uti.size(2.4rem);
+    cursor: pointer;
+    img {
+      @include uti.size(100%);
+      object-fit: cover;
+    }
+  }
+
+
+  tr {
+    @include uti.flexbox(center,null);
+    border-bottom: 1px solid uti.$natural-color-4;
+  }
+  
+  td:not(:first-child){
+    @include uti.Typography(500, 1.4rem, 2rem);
+  }
+  
+  td {
+    @include uti.flexbox();
+    padding: 2rem 0;
+  }
+
+  
+ 
+
+  
+  @for $i from 1 through 7 {
+    tbody td:nth-child(#{$i}) {
+      @if $i == 1 or $i == 7 {
+        width: 7.5%;
+        justify-content: flex-start;
+      } @else if $i == 2 {
+        justify-content: flex-start;
+        width: 25%;
+      } @else if $i == 3 or $i == 4 or $i == 5  {
+        width: 15%;
+        justify-content: center;
+      } @else if $i == 6  {
+        width: 15%;
+        justify-content: center;
+      }
+    }
+  }
+}
+
+@include uti.media(max, 1380px){
+  
+  .main-container{
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .leaderboard-table{
+    width: 100%;
+    overflow-x: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar{
+      display: none;
+    }
+  }
+
+  .leaderboard{
+    min-width: 1068px;
+  }
+}
+
+@include uti.media(max, 1100px){
+  .wrapper{
+    grid-template-columns: 1fr;
+  }
+
+}
+
+@include uti.media(max, 900px){
+  .main{
+    padding: 2.4rem 2rem 2.4rem 2rem;
+  }
+}
+@include uti.media(max, 400px){
+  .leaderboard-header-button{
+    width: 100%;
+    overflow-x: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar{
+      display: none;
+    }
+  }
+}
+
+
+
+

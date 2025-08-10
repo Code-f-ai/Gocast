@@ -1,0 +1,27 @@
+// base/_typography.scss
+@use "../utils" as uti;
+body{
+  font-family: uti.$primary-font;
+  font-weight: 400;
+  font-size: uti.$fs-base;
+  font-style: normal;
+  line-height: 1.5;
+  
+  color: uti.$black-color;
+  // background-color: uti.$color-bg;
+  background-color: var(--bg-dark,uti.$color-bg);
+  
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  
+
+  // overflow: auto;
+  // -ms-overflow-style: none;      // Cho IE
+  // scrollbar-width: none;         // Cho Firefox
+
+  // &::-webkit-scrollbar {
+  //   display: none;               // Cho Chrome, Safari
+  // }
+}
+

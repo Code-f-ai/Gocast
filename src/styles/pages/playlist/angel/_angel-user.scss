@@ -1,0 +1,93 @@
+@use '@styles/utils' as uti;
+
+.angel-section-user{
+    padding: 1.6rem 2rem 2rem 2rem;
+    border-radius: 1rem;
+    border: 1px solid var(--bg-border-dark,uti.$natural-color-2);
+}
+
+.angel-user-header{
+    @include uti.flexbox(center,space-between);
+    border-bottom: 1px solid var(--bg-border-dark,uti.$natural-color-2);
+    padding-bottom: 1.8rem;
+    margin-bottom: 1.8rem;
+    & h3{
+        @include uti.Typography(600,1.5rem,2.2rem);
+        @include uti.textellip(1,null);
+        max-width: 17.5rem;
+        // color: uti.$black-color-1;
+        color: var(--color-trending-dark,uti.$black-color-1);
+    }
+    .angel-user-view{
+        @include uti.flexbox(center,null,0.5rem);
+        @include uti.Typography(400,1.3rem,1.9rem);
+        color: uti.$gray-color-2;
+        text-transform: capitalize;
+        cursor: pointer;
+        & i{
+            color: uti.$gray-color-1;
+            font-size: 1.5rem;
+        }
+        & span{
+            @include uti.textellip(1,null);
+            max-width: 7.5rem;
+        }
+    }
+
+}
+
+.angel-user-body{
+    @include uti.flexbox(center,null,1.8rem,column);
+    
+    .angel-user-item{
+        @include uti.flexbox(center,null,1.4rem);
+        width: 100%;
+    }
+    .angel-user-item:nth-child(1) .angel-user-avatar{
+        background-color: uti.$Secondary-color-white-70;
+    }
+    .angel-user-item:nth-child(2) .angel-user-avatar{
+        background-color: uti.$Support-Color-1nd-50;
+    }
+    .angel-user-item:nth-child(3) .angel-user-avatar{
+        background-color: uti.$Support-Color-2nd-70;
+    }
+    .angel-user-item:nth-child(4) .angel-user-avatar{
+        background-color: uti.$Secondary-color-white-60;
+    }
+    .angel-user-avatar{
+        @include uti.size(7rem);
+        border-radius: 0.4rem;
+    }
+    .angel-item-content{
+        width: 100%;
+        @include uti.flexbox(null,null,0.7rem,column);
+
+    }
+    .angel-content-decs{
+        @include uti.Typography(400,1.3rem,1.9rem);
+        color: uti.$gray-color-2;
+        @include uti.textellip(1);
+    }
+    .angel-content-title{
+        @include uti.Typography(500,1.3rem,1.8rem);
+        color: var(--color-trending-dark,uti.$black-color-1);
+        @include uti.textellip(1);
+    }
+    .angel-content-footer{
+        @include uti.flexbox(center,null,1.6rem);
+    }
+    .angel-icon-left,.angel-icon-right{
+        @include uti.flexbox(center,null,0.6rem);
+        color: uti.$gray-color-2;
+        & img{
+            @include uti.size(1.6rem);
+            object-fit: cover;
+        }
+
+        & span{
+            max-width: 5rem;
+            @include uti.textellip(1,null);
+        }
+    }
+}

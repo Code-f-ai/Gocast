@@ -1,0 +1,174 @@
+ @use '@styles/utils' as uti;
+
+
+.angel-header-item{
+    @include uti.flexbox(null,null,4.5rem);
+    border-radius: 2rem;
+    max-width: 1068px;
+    box-shadow: 0 0 25px 2px var(--bg-trending-dark, uti.$gray-color-5);
+    background-color: uti.$black-color-secondary;
+    
+    .angel-header-image{
+        width: 21.3rem;
+        aspect-ratio: 21.3 / 24.5;
+        border-radius: 1.323rem;
+        object-fit: cover;
+        flex-shrink: 0;
+    }
+
+    .angel-header-content-mobile{
+        display: none;
+    }
+    
+    .angel-header-content{
+        flex-grow: 1;
+        padding: 2rem 3rem 2rem 0;
+        @include uti.flexbox(null,space-between,0,column);
+    }
+    .angel-content-image{
+        cursor: pointer
+    }
+    .angel-content-top{
+        @include uti.flexbox(flex-start,space-between,1.6rem);
+        width: 100%;
+        & img{
+            @include uti.size(4.6rem);
+            object-fit: cover;
+            cursor: pointer;
+        }
+
+    }
+    .angel-top-body{
+        @include uti.flexbox(null,center,0.4rem,column);
+        flex-grow: 1;
+    }
+    .angel-top-title{
+        @include uti.Typography(500, 1.6rem, 2.4rem);
+        @include uti.textellip(1);
+        // color: uti.$black-color-1;
+        color: uti.$white-color; 
+        cursor: pointer;
+    }
+    .angel-top-desc{
+        @include uti.flexbox(center,null);
+        @include uti.Typography(500, 1.4rem, 2rem);
+        color: uti.$gray-color-2;
+        & p{
+            max-width: 25rem;
+            @include uti.textellip(1,null);
+        }
+        & span{
+            max-width: 15rem;
+            @include uti.textellip(1,null);
+        }
+        
+        & span::before{
+            content: "";
+            display: inline-block;
+            margin: 0 0.8rem;
+            @include uti.size(0.6rem);
+            border-radius: 100rem;
+            background-color: uti.$gray-color-6;
+            vertical-align: middle;
+        }
+    }
+    .angel-top-icon-right{
+        @include uti.size(2.2rem);
+        @include uti.flexbox(center,center);
+        
+        & i{
+            color: uti.$gray-color-2;
+            cursor: pointer;
+        }
+    }
+
+
+
+    .angel-content-bottom{
+        width: 100%;
+        @include uti.flexbox(center,space-between);
+        color: uti.$gray-color-2;
+        text-transform: capitalize;
+        @include uti.Typography(500, 1.3rem, 1.8rem);
+
+        & img{
+            @include uti.size(2rem);
+            object-fit: cover;
+            cursor: pointer;
+        }
+    }
+    
+    .angel-bottom-left{
+        @include uti.flexbox(center,null,2rem);
+    }
+    .bottom-left-item{
+        @include uti.flexbox(center,null,0.4rem);
+    }
+    .angel-bottom-right{
+        @include uti.flexbox(center,null,0.6rem);
+        padding: 0.8rem 1.2rem;
+        border-radius: 0.8rem;
+        background-color: uti.$black-color;
+        cursor: pointer;
+    }
+
+}
+
+@include uti.media(max, 750px){
+    .angel-header-item{
+        @include uti.flexbox(center,null,2.5rem,column);
+    }
+    .angel-header-item .angel-header-content {
+        padding: 2rem 1rem 2rem 1rem;
+    }
+}
+@include uti.media(max, 500px){
+    .angel-header-item{
+        @include uti.flexbox(center,null,0);
+        flex-wrap: wrap;
+        background-color: uti.$white-color;
+        box-shadow: none;
+        border-radius: none;
+        background-color: none;
+        background-color: transparent
+    }
+
+    .angel-header-image-mobile{
+        @include uti.flexbox(null,null);
+        width: 100%;
+        background-color: uti.$black-color-secondary;
+        border-top-left-radius: 2rem;
+        border-top-right-radius: 2rem;
+    }
+    .angel-header-item .angel-header-content{
+        display: none;
+    }
+    .angel-header-item .angel-header-content-mobile{
+        display: block;
+        width: 100%;
+        @include uti.flexbox(center,space-between);
+        color: uti.$gray-color-2;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid var( --bg-border-dark, uti.$natural-color-2);
+        position: relative;
+        
+        & .content-mobile-item{
+            @include uti.flexbox(center,null,0.5rem,column);
+            cursor: pointer;
+
+            & img{
+                @include uti.size(2.4rem);
+                object-fit: cover;
+            }
+
+            & span{
+                @include uti.Typography(500, 1.2rem, 1.8rem);
+            }
+        }
+        .content-mobile-item-play{
+            position: relative;
+            top: -1rem;
+        }
+    }
+    
+}

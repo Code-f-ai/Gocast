@@ -1,0 +1,117 @@
+
+
+// // ----------------------------------
+// // 🎨 VENDORS
+// // ----------------------------------
+
+// @use '@fontawesome/webfonts/_font_face_fontawesome';
+// @use '@fontawesome/fontawesome.scss' ;
+// @use '@fontawesome/brands.scss' ;
+// @use '@fontawesome/regular.scss' ;
+// @use '@fontawesome/solid.scss' ;
+// @use '@fontawesome/v4-shims.scss' ;
+
+// // ----------------------------------
+// // 🎯 FONT CONFIG
+// // ----------------------------------
+
+// @use '@fonts/font_face';
+
+// // ----------------------------------
+// // 🔧 BASE STYLES
+// // ----------------------------------
+
+// @use '@styles/base';
+
+
+// // ----------------------------------
+// // 🧩 COMPONENTS
+// // ----------------------------------
+
+// @use '@styles/components';
+
+
+// // ----------------------------------
+// // 🧱 LAYOUT SYSTEM
+// // ----------------------------------
+
+// @use '@styles/layout';
+
+
+
+// // ----------------------------------
+// // 📄 PAGE SPECIFIC
+// // ----------------------------------
+
+
+// @use '@styles/utils' as uti;
+
+// .main-container{padding: 2.2rem 6rem 5rem 5.6rem;}
+// .home-wrapper{
+
+// }
+// .host{
+
+//     .host-title{
+//         max-width: 15rem;
+//         @include uti.Typography(700,1.6rem,2.4);
+//         @include uti.textellip(1,null);
+//     }
+//     .host-list{
+//         @include uti.flexbox(center, space-between);
+//         padding-top: 2.5rem;
+
+//         & .host-item:nth-child(1) .host-avatar{
+//             background-color: uti.$Support-Color-2nd-50;
+//         }
+//         & .host-item:nth-child(2) .host-avatar{
+//             background-color: uti.$Support-Color-1nd-10;
+//         }
+//         & .host-item:nth-child(3) .host-avatar{
+//             background-color: uti.$primary-color-shades-5;
+//         }
+//         & .host-item:nth-child(4) .host-avatar{
+//             background-color: uti.$Secondary-color-white-20;
+//         }
+//         & .host-item:nth-child(5) .host-avatar{
+//             background-color: uti.$Support-Color-1nd-50;
+//         }
+//         & .host-item:nth-child(6) .host-avatar{
+//             background-color: uti.$Secondary-color-white-40;
+//         }
+//         & .host-item:nth-child(7) .host-avatar{
+//             background-color: uti.$primary-color-shades-5;
+//         }
+//     }
+//     .host-item{
+//         max-width: 7rem;
+//         min-height: 9.7rem;
+//         @include uti.flexbox(center,space-between,0.7rem,column);
+//         text-align: center;
+//     }
+//     .host-avatar{
+//         @include uti.size(7rem);
+//         border-radius: 50%;
+//         border: 1px solid uti.$Secondary-color-white-10;
+//         position: relative;
+//         & img{
+//             @include uti.size(100%);
+//             object-fit: cover;
+//             border-radius: 50%;
+//         }
+//         &::after{
+//             content: "";
+//             @include uti.positon(0);
+//             background-color: transparent;
+//             border-radius: 50%;
+//             border: 2px solid uti.$white-color;
+
+//         }
+//     }
+//     .host-name{
+//         color: uti.$gray-color-1;
+//         text-transform: capitalize;
+//         @include uti.Typography(400,1.4rem,2rem);
+//         @include uti.textellip(1);
+//     }
+// }

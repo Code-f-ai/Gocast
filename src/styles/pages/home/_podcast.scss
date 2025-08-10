@@ -1,0 +1,26 @@
+@use '@styles/utils' as uti;
+
+.podcast{
+
+    .podcast-header{
+        @include uti.flexbox(center,space-between,null);
+    }
+    .podcast-header-title{
+        max-width: 12rem;
+    }
+
+    .podcast-main{
+        margin-top: 2rem;
+        display: grid;
+        // grid-template-columns: repeat(auto-fit, minmax(7.4rem, 1fr));
+        grid-template-columns: repeat(4, 1fr);
+        grid-auto-rows: 1fr;
+        gap: 1rem;
+    }
+    .podcast-main-image{
+        @include uti.size(100%,null);
+        aspect-ratio: 1;
+        object-fit: cover;
+        border-radius: 1rem;
+    }
+}

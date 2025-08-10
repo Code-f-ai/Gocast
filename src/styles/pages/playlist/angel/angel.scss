@@ -1,0 +1,172 @@
+ @use '@styles/utils' as uti;
+// ----------------------------------
+// 🎨 VENDORS
+// ----------------------------------
+
+@use '@fontawesome/webfonts/_font_face_fontawesome';
+@use '@fontawesome/fontawesome.scss' ;
+@use '@fontawesome/brands.scss' ;
+@use '@fontawesome/regular.scss' ;
+@use '@fontawesome/solid.scss' ;
+@use '@fontawesome/v4-shims.scss' ;
+
+// ----------------------------------
+// 🎯 FONT CONFIG
+// ----------------------------------
+
+@use '@fonts/font_face';
+
+// ----------------------------------
+// 🔧 BASE STYLES
+// ----------------------------------
+
+@use '@styles/base';
+
+
+// ----------------------------------
+// 🧩 COMPONENTS
+// ----------------------------------
+
+@use '@styles/components';
+
+
+// ----------------------------------
+// 🧱 LAYOUT SYSTEM
+// ----------------------------------
+
+@use '@styles/layout';
+
+
+
+@use '@styles/themes';
+// ----------------------------------
+// 📄 PAGE SPECIFIC
+// ----------------------------------
+
+@forward './angel-link';
+@forward'./angel-header';
+@forward './angel-subscribe';
+@forward './angel-host';
+@forward './angel-share';
+@forward './angel-keyword';
+@forward './angel-cagetore';
+@forward './angel-main';
+@forward './angel-user';
+@forward './angel-people';
+@forward './angel-playing';
+
+.main{
+    padding: 2.4rem 6rem 2.4rem 5.6rem;
+}
+
+.main-container{
+    display: grid;
+    grid-template-areas: 
+    "nav    nav      .  "
+    "header header header" 
+    "aside  main  section";
+    gap: 3rem 5rem;
+    grid-template-columns: 24rem 1fr 30.3rem;
+}
+
+.link{
+    grid-area: nav;
+}
+
+.angel-header{
+    grid-area: header;
+}
+
+.angel-aside{
+    grid-area: aside;
+    @include uti.flexbox(center,center,2.5rem,column);
+}
+
+.angel-main{
+    grid-area: main;
+}
+
+.angel-section{
+    grid-area: section;
+    @include uti.flexbox(null,flex-start,3rem,column);
+}
+
+
+@include uti.media(max, 1350px){
+    .main-container{
+        display: grid;
+        grid-template-areas: 
+        "nav    nav   "
+        "header header" 
+        "main    main  "
+        "aside  section";
+        gap: 3rem 5rem;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@include uti.media(max, 1100px){
+  .wrapper{
+    grid-template-columns: 1fr;
+  }
+
+}
+
+@include uti.media(max, 900px){
+  .main{
+    padding: 2.4rem 2rem 2.4rem 2rem;
+}
+.main-container{
+      gap: 3rem 2rem;
+  }
+}
+
+@include uti.media(max, 600px){
+    .main-container{
+        display: grid;
+        grid-template-areas: 
+        "nav    "
+        "header " 
+        "main   "
+        "section"
+        "aside ";
+        gap: 3rem 0rem;
+        grid-template-columns: 1fr;
+    }
+}
+
+@include uti.media(max, 500px){
+    .main-container{
+        display: grid;
+        grid-template-areas: 
+        "nav    "
+        "header " 
+        "aside "
+        "main   ";
+        gap: 1rem 0rem;
+        grid-template-columns: 1fr;
+    }
+
+    .angel-section{
+        display: none;
+    }
+    .angel-playing{
+        display: flex;
+    }
+
+    html{
+        overflow: auto;
+        -ms-overflow-style: none;      // Cho IE
+        scrollbar-width: none;         // Cho Firefox
+
+        &::-webkit-scrollbar {
+            display: none;               // Cho Chrome, Safari
+        }
+    }
+}
+
+
+
+
+
+

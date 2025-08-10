@@ -1,0 +1,53 @@
+@use '@styles/utils' as uti;
+
+.angel-keyword{
+    @include uti.flexbox(flex-start,null,1.5rem,column);
+    width: 100%;
+    padding: 1.8rem 1.5rem;
+    box-shadow: var(--box-shadow-1), var(--box-shadow-2);
+    border-radius: 1rem;
+}
+
+.angel-keyword-top{
+    @include uti.flexbox(center,null,1rem);
+    width: 100%;
+    padding-bottom: 1.4rem;
+    border-bottom: 1px solid var(--bg-border-dark, uti.$natural-color-1);
+
+    & img{
+        @include uti.size(2rem);
+        object-fit: cover;
+        flex-shrink: 0;
+    }
+
+    & h3{
+        @include uti.Typography(500,1.8rem,2.6rem);
+        @include uti.textellip(1);
+        text-transform: capitalize;
+        color: var(--color-trending-dark,uti.$black-color-1);
+    }
+}
+
+.angel-keyword-body{
+    width: 100%;
+    @include uti.flexbox(center,space-between);
+
+    & span{
+        max-width: 7.5rem;
+        @include uti.textellip(1,null);
+        @include uti.Typography(400,1.2rem,1.8rem);
+        padding: 0.4rem 1rem;
+        border-radius: 1rem;
+        cursor: pointer;
+        color: uti.$gray-color-2;
+        border: 1px solid var(--bg-border-dark, uti.$natural-color-1);
+        background: var(--bg-trending-dark, uti.$natural-color-1);
+
+    }
+}
+
+@include uti.media(max, 500px){
+    .angel-keyword{
+        display: none;
+    }
+}

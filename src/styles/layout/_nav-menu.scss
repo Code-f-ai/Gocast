@@ -1,0 +1,42 @@
+@use '@styles/utils' as uti;
+
+.menu-bottom{
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 2rem;
+    right: 2rem;
+    // background-color: uti.$white-color;
+    background-color: var(--bg-dark, uti.$white-color);
+}
+.nav-menu{
+    width: 100%;
+    height: 8rem;
+    @include uti.flexbox(center,space-between);
+    
+    .nav-menu-item{
+        @include uti.size(4.4rem);
+        @include uti.flexbox(center,center);
+        
+        & img{
+            @include uti.size(2.4rem);
+            cursor: pointer;
+        }
+        
+        &:nth-child(3){
+            background-color: uti.$primary-color;
+            border-radius: 100rem;
+            cursor: pointer;
+            & img{
+                @include uti.size(100%);
+            }
+        }
+    }
+
+}
+
+@include uti.media(max, 900px){
+    .menu-bottom{
+       display: block;
+    }
+}

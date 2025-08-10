@@ -1,0 +1,198 @@
+@use '@styles/utils' as uti;
+
+.angel-subscribe{
+    @include uti.flexbox(flex-start,null,1.4rem,column);
+    width: 100%;
+    padding: 1.8rem 1.5rem;
+    // box-shadow: var(--box-shadow-1-dark, -1px -3px 8px 0 uti.$box-shadow-1), var(--box-shadow-2-dark, -10px 54px 45px 0 uti.$box-shadow-2);
+    box-shadow: var(--box-shadow-1), var(--box-shadow-2);
+    border-radius: 1rem;
+}
+
+.angel-subscribe-top{
+    max-width: 17.8rem;
+    @include uti.flexbox(center,null,1rem);
+    
+    & img{
+        @include uti.size(4.4rem);
+        object-fit: cover;
+        border-radius: 100rem;
+        flex-shrink: 0;
+    }
+}
+
+.angel-subscribe-content{
+    @include uti.flexbox(flex-start,null,0,column);
+
+    & p{
+        @include uti.Typography(500,1.6rem,2.4rem);
+        @include uti.textellip(1);
+        text-transform: capitalize;
+        color: var(--color-trending-dark,uti.$black-color-1);
+    }
+    
+    & span{
+        @include uti.Typography(400,1.3rem,1.9rem);
+        @include uti.textellip(1);
+        color: uti.$gray-color-2;
+    }
+}
+
+.angel-subscribe-button{
+    @include uti.flexbox(center,center);
+    width: 100%;
+    aspect-ratio: 210 / 34;
+    border-radius: 0.8rem;
+    cursor: pointer;
+    background-color: uti.$natural-color-1;
+    background-color: var(--bg-trending-dark,uti.$natural-color-1);
+
+    & span{
+        @include uti.Typography(500,1.5rem,2.2rem);
+        color: var(--color-trending-dark,uti.$gray-color-1);
+        @include uti.textellip(1,null);
+        max-width: 7rem;
+    }
+}
+
+.angel-subscribe-footer{
+    @include uti.flexbox(flex-start,null);
+    position: relative;
+
+    & > *{
+        @include uti.size(3rem);
+        border-radius: 100rem;
+        object-fit: cover;
+        cursor: pointer;
+        border: 1px solid var(--bg-dark, uti.$white-color);
+    }
+    
+    .angel-subscribe-more{
+        @include uti.flexbox(center,center);
+        @include uti.Typography(500,1rem,1.8rem);
+        color: uti.$gray-color-2;
+        background-color: uti.$natural-color-1;
+        & span{
+            @include uti.textellip(1,null);
+            max-width: 2rem;
+        }
+    }
+    
+    & > *:not(:first-child){
+        position: absolute;
+    }
+
+    @for $i from 2 through 6{
+        & >*:nth-child(#{$i}){
+            left : calc( calc(#{$i} - 1) * 2rem);
+        }
+    }
+
+    & img:first-child{
+        background-color: uti.$Secondary-color-white-40;
+    }
+    & img:nth-child(2){
+        background-color: uti.$primary-color-shades-5;
+    }
+    & img:nth-child(3){
+        background-color: uti.$Secondary-color-white-70;
+    }
+    & img:nth-child(4){
+        background-color: uti.$Secondary-color-white-20;
+    }
+    & img:nth-child(5){
+        background-color: uti.$primary-color-shades-5;
+    }
+
+}
+
+.angel-subscribe-top-mobile{
+    display: none;
+    position: relative;
+
+    .angel-subscribe-content-mobile{
+        @include uti.flexbox(flex-start,null,0,column);
+    }
+    .angel-subscribe-title-mobile{
+        @include uti.Typography(500,1.6rem,2.4rem);
+        @include uti.textellip(1);
+        text-transform: capitalize;
+        color: var(--color-trending-dark,uti.$black-color-1);
+        margin-bottom: 0.5rem; 
+    }
+    .angel-subscribe-date-mobile{
+        @include uti.flexbox(center,nul);
+        @include uti.Typography(400,1.3rem,1.9rem);
+        // @include uti.textellip(1);
+        color: uti.$gray-color-2;
+        margin-bottom: 1rem;
+
+        // & span:first-child{
+            
+        // }
+        & span:last-child{
+            &::before{
+                content: "";
+                display: inline-block;
+                @include uti.size(0.5rem);
+                background-color: currentColor;
+                margin: 0 1rem;
+                border-radius: 100rem;
+                vertical-align: middle;
+            }
+        }
+    }
+    .angel-subscribe-desc-mobile{
+        @include uti.Typography(400,1.5rem,2.2rem);
+        color: var(--color-trending-dark,uti.$gray-color-1);
+        margin-bottom: 2rem;
+
+        & a{
+            color: uti.$primary-color;
+            text-transform: capitalize;
+            cursor: pointer;
+        }
+    }
+}
+
+
+@include uti.media(max, 1350px){
+    .angel-subscribe-button{
+        width: 75%;
+    }
+    .angel-subscribe{
+        align-items: center;
+    }
+    .angel-subscribe-footer{
+        margin-right: auto;
+        left: 15%;
+    }
+}
+
+@include uti.media(max, 500px){
+    .angel-subscribe-button{
+        width: 100%;
+        aspect-ratio: 210 / 30;
+    }
+    .angel-subscribe{
+        align-items: none;
+    }
+    .angel-subscribe-footer{
+        margin-right: none;
+        left: 0;
+    }
+    .angel-subscribe-top{
+        display: none;
+    }
+    .angel-subscribe-top-mobile{
+        display: block;
+
+        & i{
+            position: absolute;
+            top: 0;
+            right: 0;
+            color: uti.$gray-color-2;
+            font-size: 1.5rem;
+        }
+    }
+}

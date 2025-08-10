@@ -1,0 +1,112 @@
+// utils/_variables.scss
+
+
+// Colors
+$color-bg: #fff;
+$white-color: #fff;
+
+// Font sizes
+$fs-base: 1.4rem;
+
+// media
+$breakpoints: (
+  xxs: 360px,
+  xs: 480px,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+  xxxl: 1600px
+);
+// ___________________________________________________________
+
+$primary-font: 'IBMPlexSans', system-ui, sans-serif;
+$font-base: 'Inter', sans-serif;
+$font-title: 'Playfair Display', serif;
+$yyy: #E3E6EC;
+
+$box-shadow-1 : rgba(227, 230, 236, 0.14);
+$box-shadow-2 : rgba(227, 230, 236, 0.25);
+$box-shadow-1-dark : rgba(15, 20, 39, 0.2);
+$box-shadow-2-dark : rgba(8, 8, 9, 0.25);
+$gradient-color-1 : #415EF4;
+$gradient-color-2 : #7141EF;
+
+$black-color-secondary: #090A1C;
+$black-color: #1B1D21;
+$black-color-1: #373A43;
+$gray-color-1: #5F6164;
+$gray-color-2: #A6A7B2;
+$gray-color-3: #8494AB;
+$gray-color-4: #E9EEF4;
+$gray-color-5: #E5EAF1;
+$gray-color-6: #A5B4CB;
+
+$natural-color: #676A6F;
+$natural-color-1: #F8F8F8;
+$natural-color-2: #F0F3F6;
+$natural-color-3: #E4E4E4;
+$natural-color-4: #E4E4E4;
+$natural-color-5: #FAFBFC;
+$natural-color-6: #FCFCFC;
+
+$primary-color : #6C5DD3;
+$primary-color-shades-1 : #7B6DD7;
+$primary-color-shades-2 : #897DDC;
+$primary-color-shades-3 : #988EE0;
+$primary-color-shades-4 : #A79EE5;
+$primary-color-shades-5 : #B6AEE9;
+$primary-color-shades-6 : #C4BEED;
+$primary-color-shades-7 : #D3CEF2;
+$primary-color-shades-8 : #E2DFF6;
+$primary-color-shades-9 : #F0EFFB;
+$primary-color-black-10 : #6457C1;
+$primary-color-black-20 : #5C50AF;
+$primary-color-black-30 : #544A9E;
+$primary-color-black-40 : #4C438C;
+$primary-color-black-50 : #443D7A;
+$primary-color-black-60 : #3B3768;
+$primary-color-black-70 : #333056;
+$primary-color-black-80 : #2B2A45;
+$primary-color-black-90 : #232333;
+
+$Secondary-color : #FFA2C0;
+$Secondary-color-white-10 : #FFABC6;
+$Secondary-color-white-20 : #FFB5CD;
+$Secondary-color-white-30 : #FFBED3;
+$Secondary-color-white-40 : #FFC7D9;
+$Secondary-color-white-50 : #FFD0E0;
+$Secondary-color-white-60 : #FFDAE6;
+$Secondary-color-white-70 : #FFE3EC;
+$Secondary-color-white-80 : #FFECF2;
+$Secondary-color-white-90 : #FFF6F9;
+$Secondary-color-black-10 : #E895B0;
+$Secondary-color-black-20 : #D187A0;
+$Secondary-color-black-30 : #BB7A90;
+$Secondary-color-black-40 : #A46D80;
+$Secondary-color-black-50 : #8D6071;
+$Secondary-color-black-60 : #765261;
+$Secondary-color-black-70 : #5F4551;
+$Secondary-color-black-80 : #493841;
+$Secondary-color-black-90 : #322A31;
+
+$Support-Color-1nd : #FFCE73;
+$Support-Color-1nd-10: #FFD381;
+$Support-Color-1nd-30: #FFDD9D;
+$Support-Color-1nd-50: #FFE2AB;
+$Support-Color-1nd-70: #FFEBC7;
+$Support-Color-1nd-90: #FFF5E3;
+
+$Support-Color-2nd : #FF754C;
+$Support-Color-2nd-10: #FF835E;
+$Support-Color-2nd-30: #FF9E82;
+$Support-Color-2nd-50: #FFBAA5;
+$Support-Color-2nd-70: #FFD6C9;
+$Support-Color-2nd-90: #FFF1ED;
+$Support-Color-2nd-black-10: #FFD6C9;
+$Support-Color-2nd-black-30: #BB5B3F;
+$Support-Color-2nd-black-50: #8D4937;
+$Support-Color-2nd-black-70: #5F372E;
+$Support-Color-2nd-black-90: #322625;
+

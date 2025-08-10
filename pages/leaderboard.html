@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="../src/styles/pages/leaderboard/leaderboard.scss"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <aside class="sidebar">
+        <a href="http://localhost:5173/index.html" class="logo">
+          <span>G</span>
+          <img src="../icons/logo_all.png" srcset="../icons/logo_all.png 2x" alt="logo">
+          <span>cast</span>
+        </a>
+        <ul class="menu">
+          <li class="menu-item">
+            <a href="http://localhost:5173/index.html" class="menu-link">
+              <img
+                src="../icons/home.png"
+                srcset="../icons/home.png 2x"
+                alt=""
+                class="menu-icon"
+              />
+              <span class="menu-text">Home</span>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a
+              href="http://localhost:5173/pages/trending.html"
+              class="menu-link"
+            >
+              <img
+                src="../icons/trending.png"
+                srcset="../icons/trending.png 2x"
+                alt=""
+                class="menu-icon"
+              />
+              <span class="menu-text">Trending</span>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="http://localhost:5173/pages/topic.html" class="menu-link">
+              <img
+                src="../icons/explore.png"
+                srcset="../icons/explore.png 2x"
+                alt=""
+                class="menu-icon"
+              />
+              <span class="menu-text">Explore Topics</span>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="http://localhost:5173/pages/playlist.html" class="menu-link">
+              <img
+                src="../icons/playlist.png"
+                srcset="../icons/playlist.png 2x"
+                alt=""
+                class="menu-icon"
+              />
+              <span class="menu-text">Playlist</span>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="#Subscriptions" class="menu-link">
+              <img
+                src="../icons/Subscriptions.png"
+                srcset="../icons/Subscriptions.png 2x"
+                alt=""
+                class="menu-icon"
+              />
+              <span class="menu-text">Subscriptions</span>
+            </a>
+          </li>
+        </ul>
+        <ul class="menu">
+          <h3 class="menu-title">Podcasters</h3>
+          <li class="menu-item">
+            <a href="#Dashboard" class="menu-link">
+              <img
+                src="../icons/dashboard.png"
+                srcset="../icons/dashboard.png 2x"
+                alt=""
+                class="menu-icon"
+              />
+              <span class="menu-text">Dashboard</span>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="#Episodes" class="menu-link">
+              <img
+                src="../icons/episodes.png"
+                srcset="../icons/episodes.png 2x"
+                alt=""
+                class="menu-icon"
+              />
+              <span class="menu-text">Episodes</span>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="#Team" class="menu-link">
+              <img
+                src="../icons/team.png"
+                srcset="../icons/team.png 2x"
+                alt=""
+                class="menu-icon"
+              />
+              <span class="menu-text">Team</span>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="http://localhost:5173/pages/subscribers.html" class="menu-link">
+              <img
+                src="../icons/subscribers.png "
+                srcset="../icons/subscribers.png 2x"
+                alt=""
+                class="menu-icon"
+              />
+              <span class="menu-text">Subscribers</span>
+            </a>
+          </li>
+        </ul>
+        <ul class="menu">
+          <h3 class="menu-title">Community</h3>
+          <li class="menu-item">
+            <a href="http://localhost:5173/pages/leaderboard.html" class="menu-link">
+              <img
+                src="../icons/leaderboard.png"
+                srcset="../icons/leaderboard.png 2x"
+                alt=""
+                class="menu-icon"
+              />
+              <span class="menu-text">Leaderboard</span>
+            </a>
+          </li>
+        </ul>
+      </aside>
+      <main class="main">
+        <div class="topbar">
+          <a href="http://localhost:5173/index.html" class="topbar-logo">
+            <span>G</span>
+            <img src="../icons/logo_all.png" srcset="../icons/logo_all.png 2x" alt="logo">
+            <span>cast</span>
+          </a>
+          <div class="topbar-left">
+            <div class="icon-show-sidebar">
+              <img src="../icons/Menu.png" srcset="../icons/Menu.png 2x" alt="icon-show-sidebar">
+            </div>
+            <div class="topbar-search">
+              <img src="../icons/search.svg" alt="search" class="search-icon" />
+              <input
+                type="text"
+                class="search-input"
+                placeholder="Search 2+ million podcasts and listeners"
+              />
+            </div>
+          </div>
+          <div class="topbar-right">
+            <button class="button-upload btn">
+              <img src="../icons/upload.svg" alt="upload" />
+              <span>upload</span>
+            </button>
+            <div class="topbar-action">
+              <a href="#message" class="message-icon">
+                <img src="../icons/message-text.svg" alt="message" />
+              </a>
+            </div>
+            <div class="topbar-action">
+              <a href="#noti" class="bell-icon">
+                <img src="../icons/bell.svg" alt="noti" />
+              </a>
+            </div>
+            <a href="#profile" class="topbar-profile">
+              <img src="../icons/avata.svg" alt="profile" />
+            </a>
+          </div>
+        </div>
+        <div class="main-container">
+          <div class="leaderboard-header">
+            <h2 class="leaderboard-header-title">leaderboard</h2>
+            <div class="leaderboard-header-button">
+              <a href="#Reviews" class="leaderboard-button btn">Reviews</a>
+              <a href="#Ratings" class="leaderboard-button btn">Ratings</a>
+              <a href="#Followers" class="leaderboard-button btn">Followers</a>
+            </div>
+          </div>
+          <div class="leaderboard-table">
+            <table class="leaderboard">
+                <tbody>
+                    <tr>
+                        <td>
+                          <div class="leaderboard-icon">
+                            <input type="checkbox" id="checkbox" style="display: none;">
+                            <label for="checkbox">
+                              <img src="../icons/icon-one.png" srcset="../icons/icon-one.png 2x" alt="view">
+                            </label>
+                            <p>4</p>
+                          </div>
+                        </td>
+                        <td>
+                            <div class="leaderboard-profile">
+                              <div class="img-wrapper">
+                                  <img src="../images/avatar-cody.svg" alt="img-avatar" class="image-avatar">
+                              </div>
+                              <div class="desc">
+                                <p class="author">Thomas L. Fletcher</p> 
+                                <p class="position">Product Designer</p> 
+                            </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="comment">
+                              <img src="../icons/icon-comment.png" srcset="../icons/icon-comment.png 2x" alt="view">
+                              <span>2.4k</span> 
+                            </div>
+                        </td>
+                        <td>
+                            <div class="star">
+                              <img src="../icons/icon-star-line.png" srcset="../icons/icon-star-line.png 2x" alt="view">
+                              <span>6.4k</span> 
+                            </div>
+                        </td>
+                        <td>
+                            <div class="view">
+                              <img src="../icons/icon-view.png" srcset="../icons/icon-view.png 2x" alt="view">
+                              <span>456</span>
+                            </div>
+                        </td>
+                        <td>
+                            <p class="follow">follow</p>
+                        </td>
+                        <td>
+                            <a href="#link" class="link"> <img src="../icons/icon-link.png" srcset="../icons/icon-link.png 2x" alt="img-link"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                          <div class="leaderboard-icon">
+                            <img src="../icons/icon-two.png" srcset="../icons/icon-two.png 2x" alt="view">
+                            <p>4</p>
+                          </div>
+                        </td>
+                        <td>
+                            <div class="leaderboard-profile">
+                              <div class="img-wrapper">
+                                  <img src="../images/avatar-Courtney.svg" alt="img-avatar" class="image-avatar">
+                              </div>
+                              <div class="desc">
+                                <p class="author">Jane Cooper</p> 
+                                <p class="position">UI Designer</p> 
+                            </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="comment">
+                              <img src="../icons/icon-comment.png" srcset="../icons/icon-comment.png 2x" alt="view">
+                              <span>2.4k</span> 
+                            </div>
+                        </td>
+                        <td>
+                            <div class="star">
+                              <img src="../icons/icon-star-line.png" srcset="../icons/icon-star-line.png 2x" alt="view">
+                              <span>6.4k</span> 
+                            </div>
+                        </td>
+                        <td>
+                            <div class="view">
+                              <img src="../icons/icon-view.png" srcset="../icons/icon-view.png 2x" alt="view">
+                              <span>456</span>
+                            </div>
+                        </td>
+                        <td>
+                            <p class="follow">follow</p>
+                        </td>
+                        <td>
+                            <a href="#link" class="link"> <img src="../icons/icon-link.png" srcset="../icons/icon-link.png 2x" alt="img-link"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                          <div class="leaderboard-icon">
+                            <img src="../icons/icon-three.png" srcset="../icons/icon-three.png 2x" alt="view">
+                            <p>4</p>
+                          </div>
+                        </td>
+                        <td>
+                            <div class="leaderboard-profile">
+                              <div class="img-wrapper">
+                                  <img src="../images/avatar-savan.svg" alt="img-avatar" class="image-avatar">
+                              </div>
+                              <div class="desc">
+                                <p class="author">Wade Warren</p> 
+                                <p class="position">Medical Assistant</p> 
+                            </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="comment">
+                              <img src="../icons/icon-comment.png" srcset="../icons/icon-comment.png 2x" alt="view">
+                              <span>2.4k</span> 
+                            </div>
+                        </td>
+                        <td>
+                            <div class="star">
+                              <img src="../icons/icon-star-line.png" srcset="../icons/icon-star-line.png 2x" alt="view">
+                              <span>6.4k</span> 
+                            </div>
+                        </td>
+                        <td>
+                            <div class="view">
+                              <img src="../icons/icon-view.png" srcset="../icons/icon-view.png 2x" alt="view">
+                              <span>456</span>
+                            </div>
+                        </td>
+                        <td>
+                            <p class="follow">follow</p>
+                        </td>
+                        <td>
+                            <a href="#link" class="link"> <img src="../icons/icon-link.png" srcset="../icons/icon-link.png 2x" alt="img-link"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                          <div class="leaderboard-icon">
+                            <img src="../icons/icon-one.png" srcset="../icons/icon-one.png 2x" alt="view">
+                            <p>4</p>
+                          </div>
+                        </td>
+                        <td>
+                            <div class="leaderboard-profile">
+                              <div class="img-wrapper">
+                                  <img src="../images/avatar-Courtney.svg" alt="img-avatar" class="image-avatar">
+                              </div>
+                              <div class="desc">
+                                <p class="author">Esther Howard</p> 
+                                <p class="position">President of Sales</p> 
+                            </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="comment">
+                              <img src="../icons/icon-comment.png" srcset="../icons/icon-comment.png 2x" alt="view">
+                              <span>2.4k</span> 
+                            </div>
+                        </td>
+                        <td>
+                            <div class="star">
+                              <img src="../icons/icon-star-line.png" srcset="../icons/icon-star-line.png 2x" alt="view">
+                              <span>6.4k</span> 
+                            </div>
+                        </td>
+                        <td>
+                            <div class="view">
+                              <img src="../icons/icon-view.png" srcset="../icons/icon-view.png 2x" alt="view">
+                              <span>456</span>
+                            </div>
+                        </td>
+                        <td>
+                            <p class="follow">follow</p>
+                        </td>
+                        <td>
+                            <a href="#link" class="link"> <img src="../icons/icon-link.png" srcset="../icons/icon-link.png 2x" alt="img-link"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                          <div class="leaderboard-icon">
+                            <img src="../icons/icon-one.png" srcset="../icons/icon-one.png 2x" alt="view">
+                            <p>4</p>
+                          </div>
+                        </td>
+                        <td>
+                            <div class="leaderboard-profile">
+                              <div class="img-wrapper">
+                                  <img src="../images/avatar-Kristin.png" srcset="../images/avatar-Kristin.png 2x" alt="img-avatar" class="image-avatar">
+                              </div>
+                              <div class="desc">
+                                <p class="author">Brooklyn Simmons</p> 
+                                <p class="position">Marketing Coordinator</p> 
+                            </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="comment">
+                              <img src="../icons/icon-comment.png" srcset="../icons/icon-comment.png 2x" alt="view">
+                              <span>2.4k</span> 
+                            </div>
+                        </td>
+                        <td>
+                            <div class="star">
+                              <img src="../icons/icon-star-line.png" srcset="../icons/icon-star-line.png 2x" alt="view">
+                              <span>6.4k</span> 
+                            </div>
+                        </td>
+                        <td>
+                            <div class="view">
+                              <img src="../icons/icon-view.png" srcset="../icons/icon-view.png 2x" alt="view">
+                              <span>456</span>
+                            </div>
+                        </td>
+                        <td>
+                            <p class="follow">follow</p>
+                        </td>
+                        <td>
+                            <a href="#link" class="link"> <img src="../icons/icon-link.png" srcset="../icons/icon-link.png 2x" alt="img-link"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                          <div class="leaderboard-icon">
+                            <img src="../icons/icon-one.png" srcset="../icons/icon-one.png 2x" alt="view">
+                            <p>4</p>
+                          </div>
+                        </td>
+                        <td>
+                            <div class="leaderboard-profile">
+                              <div class="img-wrapper">
+                                  <img src="../images/avatar-arlene.svg" alt="img-avatar" class="image-avatar">
+                              </div>
+                              <div class="desc">
+                                <p class="author">Courtney Henry</p> 
+                                <p class="position">Medical Assistant</p> 
+                            </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="comment">
+                              <img src="../icons/icon-comment.png" srcset="../icons/icon-comment.png 2x" alt="view">
+                              <span>2.4k</span> 
+                            </div>
+                        </td>
+                        <td>
+                            <div class="star">
+                              <img src="../icons/icon-star-line.png" srcset="../icons/icon-star-line.png 2x" alt="view">
+                              <span>6.4k</span> 
+                            </div>
+                        </td>
+                        <td>
+                            <div class="view">
+                              <img src="../icons/icon-view.png" srcset="../icons/icon-view.png 2x" alt="view">
+                              <span>456</span>
+                            </div>
+                        </td>
+                        <td>
+                            <p class="follow">follow</p>
+                        </td>
+                        <td>
+                            <a href="#link" class="link"> <img src="../icons/icon-link.png" srcset="../icons/icon-link.png 2x" alt="img-link"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                          <div class="leaderboard-icon">
+                            <img src="../icons/icon-one.png" srcset="../icons/icon-one.png 2x" alt="view">
+                            <p>4</p>
+                          </div>
+                        </td>
+                        <td>
+                            <div class="leaderboard-profile">
+                              <div class="img-wrapper">
+                                  <img src="../images/avatar-cody.svg" alt="img-avatar" class="image-avatar">
+                              </div>
+                              <div class="desc">
+                                <p class="author">Darrell Steward</p> 
+                                <p class="position">Web Designer</p> 
+                            </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="comment">
+                              <img src="../icons/icon-comment.png" srcset="../icons/icon-comment.png 2x" alt="view">
+                              <span>2.4k</span> 
+                            </div>
+                        </td>
+                        <td>
+                            <div class="star">
+                              <img src="../icons/icon-star-line.png" srcset="../icons/icon-star-line.png 2x" alt="view">
+                              <span>6.4k</span> 
+                            </div>
+                        </td>
+                        <td>
+                            <div class="view">
+                              <img src="../icons/icon-view.png" srcset="../icons/icon-view.png 2x" alt="view">
+                              <span>456</span>
+                            </div>
+                        </td>
+                        <td>
+                            <p class="follow">follow</p>
+                        </td>
+                        <td>
+                            <a href="#link" class="link"> <img src="../icons/icon-link.png" srcset="../icons/icon-link.png 2x" alt="img-link"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                          <div class="leaderboard-icon">
+                            <img src="../icons/icon-one.png" srcset="../icons/icon-one.png 2x" alt="view">
+                            <p>4</p>
+                          </div>
+                        </td>
+                        <td>
+                            <div class="leaderboard-profile">
+                              <div class="img-wrapper">
+                                  <img src="../images/avatar-Courtney.svg" alt="img-avatar" class="image-avatar">
+                              </div>
+                              <div class="desc">
+                                <p class="author">Esther Howard</p> 
+                                <p class="position">President of Sales</p> 
+                            </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="comment">
+                              <img src="../icons/icon-comment.png" srcset="../icons/icon-comment.png 2x" alt="view">
+                              <span>2.4k</span> 
+                            </div>
+                        </td>
+                        <td>
+                            <div class="star">
+                              <img src="../icons/icon-star-line.png" srcset="../icons/icon-star-line.png 2x" alt="view">
+                              <span>6.4k</span> 
+                            </div>
+                        </td>
+                        <td>
+                            <div class="view">
+                              <img src="../icons/icon-view.png" srcset="../icons/icon-view.png 2x" alt="view">
+                              <span>456</span>
+                            </div>
+                        </td>
+                        <td>
+                            <p class="follow">follow</p>
+                        </td>
+                        <td>
+                            <a href="#link" class="link"> <img src="../icons/icon-link.png" srcset="../icons/icon-link.png 2x" alt="img-link"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                          <div class="leaderboard-icon">
+                            <img src="../icons/icon-one.png" srcset="../icons/icon-one.png 2x" alt="view">
+                            <p>4</p>
+                          </div>
+                        </td>
+                        <td>
+                            <div class="leaderboard-profile">
+                              <div class="img-wrapper">
+                                  <img src="../images/avatar-Kristin.png" srcset="../images/avatar-Kristin.png 2x" alt="img-avatar" class="image-avatar">
+                              </div>
+                              <div class="desc">
+                                <p class="author">Brooklyn Simmons</p> 
+                                <p class="position">Marketing Coordinator</p> 
+                            </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="comment">
+                              <img src="../icons/icon-comment.png" srcset="../icons/icon-comment.png 2x" alt="view">
+                              <span>2.4k</span> 
+                            </div>
+                        </td>
+                        <td>
+                            <div class="star">
+                              <img src="../icons/icon-star-line.png" srcset="../icons/icon-star-line.png 2x" alt="view">
+                              <span>6.4k</span> 
+                            </div>
+                        </td>
+                        <td>
+                            <div class="view">
+                              <img src="../icons/icon-view.png" srcset="../icons/icon-view.png 2x" alt="view">
+                              <span>456</span>
+                            </div>
+                        </td>
+                        <td>
+                            <p class="follow">follow</p>
+                        </td>
+                        <td>
+                            <a href="#link" class="link"> <img src="../icons/icon-link.png" srcset="../icons/icon-link.png 2x" alt="img-link"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                          <div class="leaderboard-icon">
+                            <img src="../icons/icon-one.png" srcset="../icons/icon-one.png 2x" alt="view">
+                            <p>4</p>
+                          </div>
+                        </td>
+                        <td>
+                            <div class="leaderboard-profile">
+                              <div class="img-wrapper">
+                                  <img src="../images/avatar-arlene.svg" alt="img-avatar" class="image-avatar">
+                              </div>
+                              <div class="desc">
+                                <p class="author">Courtney Henry</p> 
+                                <p class="position">Medical Assistant</p> 
+                            </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="comment">
+                              <img src="../icons/icon-comment.png" srcset="../icons/icon-comment.png 2x" alt="view">
+                              <span>2.4k</span> 
+                            </div>
+                        </td>
+                        <td>
+                            <div class="star">
+                              <img src="../icons/icon-star-line.png" srcset="../icons/icon-star-line.png 2x" alt="view">
+                              <span>6.4k</span> 
+                            </div>
+                        </td>
+                        <td>
+                            <div class="view">
+                              <img src="../icons/icon-view.png" srcset="../icons/icon-view.png 2x" alt="view">
+                              <span>456</span>
+                            </div>
+                        </td>
+                        <td>
+                            <p class="follow">follow</p>
+                        </td>
+                        <td>
+                            <a href="#link" class="link"> <img src="../icons/icon-link.png" srcset="../icons/icon-link.png 2x" alt="img-link"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                          <div class="leaderboard-icon">
+                            <img src="../icons/icon-one.png" srcset="../icons/icon-one.png 2x" alt="view">
+                            <p>4</p>
+                          </div>
+                        </td>
+                        <td>
+                            <div class="leaderboard-profile">
+                              <div class="img-wrapper">
+                                  <img src="../images/avatar-cody.svg" alt="img-avatar" class="image-avatar">
+                              </div>
+                              <div class="desc">
+                                <p class="author">Darrell Steward</p> 
+                                <p class="position">Web Designer</p> 
+                            </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="comment">
+                              <img src="../icons/icon-comment.png" srcset="../icons/icon-comment.png 2x" alt="view">
+                              <span>2.4k</span> 
+                            </div>
+                        </td>
+                        <td>
+                            <div class="star">
+                              <img src="../icons/icon-star-line.png" srcset="../icons/icon-star-line.png 2x" alt="view">
+                              <span>6.4k</span> 
+                            </div>
+                        </td>
+                        <td>
+                            <div class="view">
+                              <img src="../icons/icon-view.png" srcset="../icons/icon-view.png 2x" alt="view">
+                              <span>456</span>
+                            </div>
+                        </td>
+                        <td>
+                            <p class="follow">follow</p>
+                        </td>
+                        <td>
+                            <a href="#link" class="link"> <img src="../icons/icon-link.png" srcset="../icons/icon-link.png 2x" alt="img-link"></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="menu-bottom">
+          <div class="nav-menu">
+            <div class="nav-menu-item">
+              <img src="../icons/nav-menu.png" srcset="../icons/nav-menu.png 2x" alt="nav-menu" class="nav-menu-show" />
+            </div>
+            <div class="nav-menu-item">
+              <img src="../icons/Search-nav.png" srcset="../icons/Search-nav.png 2x" alt="nav-menu" />
+            </div>
+            <div class="nav-menu-item">
+              <button class="btn">
+                <img src="../icons/upload.svg" alt="upload" />
+              </button>
+            </div>
+            <div class="nav-menu-item">
+              <a href="#message">
+                <img src="../icons/message-text.svg" alt="message" />
+              </a>
+            </div>
+            <div class="nav-menu-item">
+              <a href="#noti">
+                <img src="../icons/bell.svg" alt="noti" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script type="module" src="../src/scripts/main.js"></script>
+  </body>
+</html>

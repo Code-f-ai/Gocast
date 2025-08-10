@@ -1,0 +1,60 @@
+@use '@styles/utils' as uti;
+
+.history{
+    margin-top: 3.5rem;
+
+    .history-header{
+        @include uti.flexbox(center,space-between,null);
+    }
+    .history-main{
+        padding-top: 1.8rem;
+        @include uti.flexbox(center,center,1.8rem,column);
+    }
+    .history-main-item{
+        width: 100%;
+        @include uti.flexbox(center,null,1rem);
+    }
+    .history-main-image{
+        @include uti.size(10.9rem,6.7rem);
+        border-radius: 0.4rem;
+        object-fit: cover;
+    }
+    .history-main-content{
+        @include uti.flexbox(null,center,0.3rem,column);
+        width: 100%;
+    }
+    .history-main-host{
+        max-width: 100%;
+    }
+    .history-main-title{
+        max-width: 100%;
+        cursor: pointer
+    }
+    .history-main-actions{
+        @include uti.flexbox(center,null,1.6rem);
+    }
+    .history-actions-play,
+    .history-actions-heart{
+        @include uti.flexbox(center,null,0.6rem);
+
+        & img{
+            @include uti.size(1.6rem);
+            object-fit: cover;
+            cursor: pointer;
+        }
+
+        & span{
+            max-width: 7.5rem;
+        }
+    }
+}
+@include uti.media(max, 1275px){
+    .history .history-main-item{
+        align-items: flex-start;
+    }
+    .history .history-main-image{
+        width: 35%;
+        height: auto;
+        aspect-ratio: 10.9 / 6.7;
+    }
+}

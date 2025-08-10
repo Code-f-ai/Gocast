@@ -1,0 +1,341 @@
+ @use '@styles/utils' as uti;
+// ----------------------------------
+// 🎨 VENDORS
+// ----------------------------------
+
+@use '@fontawesome/webfonts/_font_face_fontawesome';
+@use '@fontawesome/fontawesome.scss' ;
+@use '@fontawesome/brands.scss' ;
+@use '@fontawesome/regular.scss' ;
+@use '@fontawesome/solid.scss' ;
+@use '@fontawesome/v4-shims.scss' ;
+
+// ----------------------------------
+// 🎯 FONT CONFIG
+// ----------------------------------
+
+@use '@fonts/font_face';
+
+// ----------------------------------
+// 🔧 BASE STYLES
+// ----------------------------------
+
+@use '@styles/base';
+
+
+// ----------------------------------
+// 🧩 COMPONENTS
+// ----------------------------------
+
+@use '@styles/components';
+
+
+// ----------------------------------
+// 🧱 LAYOUT SYSTEM
+// ----------------------------------
+
+@use '@styles/layout';
+
+
+
+@use '@styles/themes';
+// ----------------------------------
+// 📄 PAGE SPECIFIC
+// ----------------------------------
+
+.main{
+    padding: 2.4rem 6rem 2.4rem 5.6rem;
+
+}
+.playlist-main{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(1068px, 1fr));
+    row-gap: 3rem;
+}
+
+.playlist-header{
+    margin-bottom: 3rem;
+    @include uti.flexbox(center,space-between);
+    color: uti.$gray-color-2;
+    
+    .playlist-header-left{
+        @include uti.flexbox(flex-start,null,1rem,column);
+        
+        & h2{
+            @include uti.Typography(600,2.4rem,2.6rem);
+            text-transform: capitalize;
+            // color: uti.$black-color-1;
+            color: var(--color-trending-dark, uti.$black-color-1);
+            @include uti.textellip(1,null);
+            max-width: 50rem;
+        }
+        
+        & span{
+            @include uti.Typography(500,1.4rem,2rem);
+            @include uti.textellip(2,null);
+            max-width: 75rem;
+        }
+    }
+    
+    .playlist-header-right{
+        @include uti.flexbox(center,space-between);
+        padding: 1rem 2.3rem;
+        width: 17.3rem;
+        border-radius: 1.6rem;
+        color: uti.$gray-color-2;
+        cursor: pointer;
+        // background: uti.$natural-color-1;
+        background-color: var( --bg-topbar-search-dark,uti.$natural-color-1);
+        
+        & span{
+            text-transform: capitalize;
+            @include uti.Typography(500,1.5rem,2.2rem);
+        }
+        
+        & i{
+            font-size: 2rem;
+        }
+    }
+}
+
+
+.playlist-main-item{
+    @include uti.flexbox(null,null,2.8rem);
+    padding: 2rem 2.2rem 2rem 2.3rem;
+    border-radius: 1rem;
+    min-width: 1023px;
+    // box-shadow: 0 0 25px 2px var(--bg-trending-dark, uti.$gray-color-5);
+    box-shadow: var(--box-shadow-1), var(--box-shadow-2);
+    
+    .playlist-main-image{
+        width: 21.3rem;
+        aspect-ratio: 21.3 / 24.5;
+        border-radius: 1.323rem;
+        object-fit: cover;
+        flex-shrink: 0;
+    }
+    
+    .playlist-main-content{
+        flex-grow: 1;
+        @include uti.flexbox(null,space-between,0,column);
+    }
+    .playlist-content-top{
+        @include uti.flexbox(flex-start,space-between,1.6rem);
+        width: 100%;
+        & img{
+            @include uti.size(4.6rem);
+            object-fit: cover;
+            cursor: pointer;
+        }
+
+    }
+    .playlist-top-body{
+        @include uti.flexbox(null,center,0.4rem,column);
+        flex-grow: 1;
+    }
+    .playlist-top-title{
+        @include uti.Typography(500, 1.6rem, 2.4rem);
+        @include uti.textellip(1);
+        // color: uti.$black-color-1;
+        color: var( --color-trending-dark,uti.$black-color-1); 
+        cursor: pointer;
+    }
+    .playlist-top-desc{
+        @include uti.flexbox(center,null);
+        @include uti.Typography(500, 1.4rem, 2rem);
+        color: uti.$gray-color-2;
+        & p{
+            max-width: 25rem;
+            @include uti.textellip(1,null);
+        }
+        & span{
+            max-width: 15rem;
+            @include uti.textellip(1,null);
+        }
+        
+        & span::before{
+            content: "";
+            display: inline-block;
+            margin: 0 0.8rem;
+            @include uti.size(0.6rem);
+            border-radius: 100rem;
+            background-color: uti.$gray-color-6;
+            vertical-align: middle;
+        }
+    }
+    .playlist-top-icon-right{
+        @include uti.size(2.2rem);
+        @include uti.flexbox(center,center);
+        
+        & i{
+            color: uti.$gray-color-2;
+            cursor: pointer;
+        }
+    }
+
+
+
+    .playlist-content-bottom{
+        width: 100%;
+        @include uti.flexbox(center,space-between);
+
+        & img{
+            @include uti.size(2rem);
+            object-fit: cover;
+            cursor: pointer;
+        }
+    }
+    
+    .playlist-bottom-right{
+        @include uti.flexbox(center,null,1.6rem);
+    }
+
+    .playlist-bottom-left{
+        cursor: pointer;
+        & p{
+            padding: 0.7rem 1.6rem;
+            border: 1px solid var(--color-trending-dark, uti.$gray-color-5);
+            border-radius: 0.8rem;
+            @include uti.Typography(400, 1.2rem, 1.8rem);
+            color: var(--color-trending-dark, uti.$black-color-1);
+            background-color: var(--bg-topbar-search-dark,uti.$white-color);
+        }
+    }
+
+}
+.playlist-content-body{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem 4rem;
+
+    .playlist-content-image{
+        grid-column: -1/1;
+        grid-row: 1;
+        width: 100%;
+        aspect-ratio: 782 / 59;
+        object-fit: cover;
+        cursor: pointer;
+        filter: var(--img-filter);
+    }
+
+    .content-body-item{
+       @include uti.flexbox(center,space-between); 
+       padding: 0.5rem;
+       background-color: var(--bg-topbar-search-dark,uti.$natural-color-1);
+       cursor: pointer;
+       transition: color 0.25s ease-in-out, 
+       background-color 0.25s ease-in-out, 
+       border-radius 0.25s ease-in-out;
+
+       &:hover {
+        background-color: var(--bg-hover-dark, uti.$gray-color-5);
+        border-radius: 1rem;
+       }
+
+       &:hover .content-body-left{
+            & p{
+                // color: uti.$Support-Color-2nd-10;
+                color: var(--color-hover-dark, uti.$Support-Color-2nd-10);
+            }
+       }
+       &:hover .content-body-right{
+            & i{
+                color: var( --bg-dark, uti.$Support-Color-2nd-10);
+            }
+            & span{
+                color: var(--color-hover-dark, uti.$Support-Color-2nd-10);
+            }
+
+            & .content-body-right-play{
+                background-color: var(--color-trending-dark);
+            }
+
+       }
+    }
+
+    .content-body-left{
+        @include uti.flexbox(center,null,0.6rem);
+
+        & img{
+            border-radius: 100rem;
+            @include uti.size(1.8rem);
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        & p{
+            @include uti.Typography(400, 1.2rem, 1.8rem);
+            @include uti.textellip(1);
+            color: var(--color-trending-dark, uti.$black-color-1);
+        }
+    }
+    .content-body-right{
+        @include uti.flexbox(center,null,0.5rem);
+        flex-shrink: 0;
+        & span{
+            @include uti.Typography(400, 1.2rem, 1.8rem);
+            @include uti.textellip(1,null);
+            max-width: 5rem;
+            color: uti.$gray-color-2;
+        }
+    }
+    
+    .content-body-right-play{
+        @include uti.flexbox(center,center);
+        @include uti.size(1.6rem);
+        border-radius: 100rem;
+        background-color: var( --bg-dark, uti.$gray-color-5);
+        flex-shrink: 0;
+
+        & i{
+            font-size: 5.5px;
+            color: uti.$gray-color-2;
+        }
+    }
+}
+
+@include uti.media(max, 1380px){
+    .main-container{
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+        
+    }
+    .playlist-main{
+        width: 100%;
+        align-items: flex-start;
+        overflow-x: auto;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        &::-webkit-scrollbar{
+            display: none;
+        }
+    }
+    .playlist-main-item{
+        box-shadow:inset 0 0 5px 2px var(--bg-trending-dark, uti.$gray-color-5);
+    }
+}
+
+@include uti.media(max, 1100px){
+    .wrapper{
+        grid-template-columns: 1fr;
+    }
+    .main{
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+}
+
+@include uti.media(max, 900px){
+    .main{
+        padding: 2.4rem 2rem 2.4rem 2rem;
+    }
+    .playlist-header .playlist-header-right{
+        display: none;
+    }
+    .main-container{
+        margin-bottom: 8rem;
+    }
+}

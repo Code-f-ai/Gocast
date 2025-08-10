@@ -1,0 +1,36 @@
+@use '@styles/utils' as uti;
+
+:root{
+    --box-shadow-1 : -1px -3px 8px 0 #{uti.$box-shadow-1};
+    --box-shadow-2 : -10px 54px 45px 0 #{uti.$box-shadow-2};
+}
+
+@media (prefers-color-scheme: dark){
+    :root{
+        --bg-dark : #{uti.$black-color-1};
+        --bg-dark-90 : #{rgba(uti.$black-color-1,0.9)};
+        --bg-trending-dark : #{uti.$primary-color-black-90};
+        --color-trending-dark : #{uti.$white-color};
+        --bg-topbar-search-dark : #{uti.$natural-color};
+        --bg-border-dark : #{uti.$natural-color};
+        --bg-hover-dark : #{uti.$Support-Color-2nd-black-70};
+        --color-hover-dark : #{uti.$Support-Color-2nd};
+        --img-filter: grayscale(1) brightness(0.6);
+        --box-shadow-1 : -1px -3px 14px 0 #{uti.$box-shadow-1-dark};
+        --box-shadow-2 : -10px 24px 35px 0 #{uti.$box-shadow-2-dark};
+    }
+}
+
+html.dark{
+    --bg-dark : #{uti.$black-color-1};
+    --bg-dark-90 : #{rgba(uti.$black-color-1,0.9)};
+    --bg-trending-dark : #{uti.$primary-color-black-90};
+    --color-trending-dark : #{uti.$white-color};
+    --bg-topbar-search-dark : #{uti.$natural-color};
+    --bg-border-dark : #{uti.$natural-color};
+    --bg-hover-dark : #{uti.$Support-Color-2nd-black-70};
+    --color-hover-dark : #{uti.$Support-Color-2nd};
+    --img-filter: grayscale(1) brightness(0.6);
+    --box-shadow-1 : -1px -3px 14px 0 #{uti.$box-shadow-1-dark};
+    --box-shadow-2: -10px 24px 35px 0 #{uti.$box-shadow-2-dark};
+}

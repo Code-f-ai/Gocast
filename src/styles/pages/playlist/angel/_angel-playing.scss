@@ -1,0 +1,49 @@
+ @use '@styles/utils' as uti;
+
+.angel-playing{
+    
+    @include uti.flexbox(center,space-between);
+    background-color: var(--bg-trending-dark, uti.$natural-color-2);
+    padding: 1.3rem 3rem;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 8rem;
+
+    .angel-playing-left{
+        @include uti.flexbox(center,null,1.3rem);
+
+        & img{
+            cursor: pointer
+        }
+    }
+    .angel-playing-right{
+        @include uti.flexbox(center,null,0.5rem);
+
+        & span{
+            @include uti.Typography(500,1.2rem,1.8rem);
+            @include uti.textellip(1,null);
+            color: uti.$gray-color-3;
+            max-width: 5rem
+        }
+    }
+    .angel-playing-right-line{
+        @include uti.size(20vw,0.3rem);
+        background: uti.$Support-Color-2nd-70;
+        position: relative;
+        border-radius: 2rem;
+        cursor: pointer;
+
+        &::before{
+            content: "";
+            position: absolute;
+            left: 0;
+            width: 35%;
+            height: 0.3rem;
+            background-color: uti.$Support-Color-2nd;
+            border-radius: inherit;
+        }
+    }
+
+    display: none;
+}

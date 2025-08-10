@@ -1,0 +1,288 @@
+@use '@styles/utils' as uti;
+// ----------------------------------
+// 🎨 VENDORS
+// ----------------------------------
+
+@use '@fontawesome/webfonts/_font_face_fontawesome';
+@use '@fontawesome/fontawesome.scss' ;
+@use '@fontawesome/brands.scss' ;
+@use '@fontawesome/regular.scss' ;
+@use '@fontawesome/solid.scss' ;
+@use '@fontawesome/v4-shims.scss' ;
+
+// ----------------------------------
+// 🎯 FONT CONFIG
+// ----------------------------------
+
+@use '@fonts/font_face';
+
+// ----------------------------------
+// 🔧 BASE STYLES
+// ----------------------------------
+
+@use '@styles/base';
+
+
+// ----------------------------------
+// 🧩 COMPONENTS
+// ----------------------------------
+
+@use '@styles/components';
+
+
+// ----------------------------------
+// 🧱 LAYOUT SYSTEM
+// ----------------------------------
+
+@use '@styles/layout';
+
+
+
+@use '@styles/themes';
+// ----------------------------------
+// 📄 PAGE SPECIFIC
+// ----------------------------------
+
+
+.main{
+    padding: 2.4rem 6rem 2.4rem 5.6rem;
+
+    .topbar .logo{
+        display: none;
+    }
+}
+.topbar-left{
+  display: flex;
+  gap: 1rem;
+}
+
+.subscriber-title{
+  @include uti.Typography(600,2.2rem,2.4rem);
+  color: var(--color-trending-dark,uti.$black-color);
+}
+
+.main-container{
+  container-name: main-container;
+  container-type: inline-size;
+}
+.subscriber-title{
+  margin: 2rem 0;
+  max-width: 50rem;
+  @include uti.textellip(1,null)
+
+}
+.subscriber {
+  width: 100%;
+  // min-width: 1068px;
+  margin: 0 auto;
+  margin-bottom: 6rem;
+
+  .subscriber-checkbox{
+    display: flex;
+    align-items: center;
+    & input{
+      display: none;
+
+      &:checked + label{
+        & i{
+          display: block
+        }
+      }
+    }
+
+    & label{
+      @include uti.flexbox(center,center);
+      @include uti.size(2rem);
+      border-radius: 3px;
+      border: 1px solid uti.$gray-color-2;
+      color: uti.$gray-color-2;
+      cursor: pointer;
+      & i{
+        display: none;
+      }
+    }
+  }
+
+  th:first-child div{
+    @include uti.flexbox(center,center);
+    @include uti.size(2rem);
+    color: uti.$white-color;
+    background-color: uti.$primary-color;
+    border-radius: 3px;
+    & i{
+      display: block
+    }
+      
+  }
+
+  .subscriber-profile {
+    @include uti.flexbox(center, flex-start, 1rem);
+  }
+
+  .img-wrapper {
+    @include uti.size(3.8rem);
+    border-radius: 100rem;
+    flex-shrink: 0;
+  }
+
+  .image-avatar {
+    @include uti.size(100%);
+    border-radius: inherit;
+    object-fit: cover;
+    cursor: pointer
+  }
+
+
+  .name {
+    @include uti.Typography(500,1.6rem,2.4rem);
+    @include uti.textellip(1);
+    color: var(--color-trending-dark,uti.$black-color-1);
+
+  }
+
+  .bio, .kama {
+    @include uti.textellip(1);
+    color: var(--color-trending-dark,uti.$gray-color-1);
+  }
+  .kama{
+    text-align: center;
+  }
+
+  .badge {
+    position: relative;
+    padding: 0.3rem 1.6rem;
+    border-radius: 0.4rem;
+    
+    &::after {
+      content: "";
+      @include uti.positon(0);
+      background-color: currentColor;
+      opacity: 0.3;
+      border-radius: inherit;
+    }
+  }
+   // Avatar background color theo dòng chẵn/lẻ
+  tbody tr:nth-child(odd) .img-wrapper {
+      background-color: uti.$Secondary-color-white-40;
+  }
+  tbody tr:nth-child(odd) .badge {
+    color: uti.$Secondary-color;
+
+    &::before{
+      content: "Producer";
+    }
+  }
+
+  tbody tr:nth-child(even) .img-wrapper {
+    background-color: uti.$primary-color-shades-5;
+  }
+
+  tbody tr:nth-child(even) .badge {
+    color: uti.$primary-color;
+
+    &::before{
+      content: "host";
+    }
+  }
+
+  .follow {
+    color: uti.$white-color;
+    background-color: uti.$Support-Color-2nd;
+    padding: 0.3rem 1.6rem;
+    border-radius: 0.4rem;
+    cursor: pointer
+  }
+
+  .link {
+    @include uti.size(2.4rem);
+    cursor: pointer;
+    img {
+      @include uti.size(100%);
+      object-fit: cover;
+    }
+  }
+
+  // Table Layout Flex
+  // thead tr {
+  //   // border-bottom: 1px solid uti.$natural-color-4;
+  // }
+
+  tr {
+    @include uti.flexbox(center,null);
+    border-bottom: 1px solid uti.$natural-color-4;
+  }
+  
+  th{
+    @include uti.Typography(500, 1.4rem, 2rem);
+    text-transform: capitalize;
+    color: uti.$gray-color-2;
+  }
+  
+  td:not(:first-child){
+    @include uti.Typography(500, 1.4rem, 2rem);
+  }
+  
+  th, td {
+    @include uti.flexbox();
+    padding: 2rem 0;
+  }
+
+  
+ 
+
+  
+  @for $i from 1 through 7 {
+    thead th:nth-child(#{$i}),
+    tbody td:nth-child(#{$i}) {
+      @if $i == 1 {
+        width: 5%;
+        justify-content: flex-start;
+      } @else if $i == 2 or $i == 3 {
+        justify-content: flex-start;
+        width: 20%;
+      } @else if $i == 4 or $i == 6 {
+        width: 15%;
+      } @else if $i == 5 or $i == 7 {
+        width: 12.5%;
+      }
+    }
+  }
+}
+
+@include uti.media(max, 1380px){
+  
+  .main-container{
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .subscriber-table{
+    width: 100%;
+    overflow-x: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar{
+      display: none;
+    }
+  }
+
+  .subscriber{
+    min-width: 1068px;
+  }
+}
+
+@include uti.media(max, 1100px){
+  .wrapper{
+    grid-template-columns: 1fr;
+  }
+
+}
+
+@include uti.media(max, 900px){
+  .main{
+    padding: 2.4rem 2rem 2.4rem 2rem;
+  }
+}
+
+

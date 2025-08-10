@@ -1,0 +1,173 @@
+ @use '@styles/utils' as uti;
+
+// .angel-main{}
+
+.angel-main-desc{
+    @include uti.Typography(400,1.5rem,2.2rem);
+    color: var(--color-trending-dark,uti.$gray-color-1);
+    border-bottom: 1px solid var(--bg-border-dark,uti.$natural-color-2);
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+
+    // & span{
+    //     @include uti.textellip(3);
+    // }
+    
+    & a{
+        color: uti.$primary-color;
+        text-transform: capitalize;
+        cursor: pointer;
+    }
+
+}
+.angel-main-body{
+    @include uti.flexbox(null,null,1rem,column);
+}
+.angel-main-item{
+    @include uti.flexbox(center,space-between);
+    padding: 0.6rem 1rem;
+    border-radius: 1rem;
+    border: 1px solid transparent;
+    background-color: uti.$natural-color-1;
+    background-color: var(--bg-trending-dark, uti.$natural-color-1);
+    transition: border 0.25s ease-in-out;
+    cursor: pointer;
+
+    &:hover{
+        border: 1px solid uti.$Support-Color-2nd;
+    }
+
+    &:hover .angel-main-left{
+        color: uti.$Support-Color-2nd-10;
+    }
+
+    &:hover .angel-main-right{
+        color: uti.$Support-Color-2nd-10;
+        
+        & .angel-main-icon{
+            background-color: uti.$white-color;
+        }
+    }
+
+ // mobile
+    &:hover .angel-main-left .angel-main-left-mobile{
+        & i{
+            display: none;
+        }
+        & .angel-main-icon-mobile{
+            background-color: transparent;
+        }
+        & .angel-main-left-mobile-1{
+            display: none;
+        }
+        & img{
+            display: inline-block;
+        }
+        & .angel-main-left-mobile-2{
+            display: inline-block;
+            color: uti.$Support-Color-2nd-10;
+        }
+    }
+
+}
+.angel-main-left{
+    @include uti.flexbox(center,null,1.6rem);
+    color: var(--color-trending-dark,uti.$black-color-1);
+    transition: color 0.25s ease-in-out;
+
+    & img{
+        @include uti.size(3.2rem);
+        border-radius: 0.5rem;
+        flex-shrink: 0;
+        object-fit: cover;
+    }
+
+    & p{
+        @include uti.Typography(400,1.2rem,1.8rem);
+        max-width: 25rem;
+        @include uti.textellip(1,null);
+    }
+}
+
+// mobile
+.angel-main-left-content{
+    @include uti.flexbox(flex-start,space-between,0,column);
+}
+.angel-main-right-mobile{display: none};
+
+.angel-main-left-mobile{
+    @include uti.flexbox(center,null,1rem);
+    color: var(--color-trending-dark,uti.$natural-color);
+    transition: color 0.25s ease-in-out;
+    & span{
+        @include uti.Typography(400,1rem,1.6rem);
+    }
+    .angel-main-icon-mobile{
+        @include uti.flexbox(center,center);
+        @include uti.size(1.4rem);
+        transition: background-color 0.25s ease-in-out;
+        background-color: var(--bg-dark, uti.$gray-color-5);
+        border-radius: 100rem;
+        & i{
+            font-size: 0.6rem;
+            flex-shrink: 0;
+        }
+
+        & img {
+            @include uti.size(1.4rem);
+            display: none;
+        }
+    }
+    .angel-main-left-mobile-2{
+        display: none;
+    }
+
+    display: none;
+}
+
+// mobile
+
+
+
+.angel-main-right{
+    @include uti.Typography(400,1.2rem,1.8rem);
+    @include uti.flexbox(center,null,0.5rem);
+    color: var(--color-trending-dark,uti.$black-color-1);
+    transition: color 0.25s ease-in-out;
+    
+    .angel-main-icon{
+        @include uti.flexbox(center,center);
+        @include uti.size(1.6rem);
+        transition: background-color 0.25s ease-in-out;
+        background-color: var(--bg-dark, uti.$white-color);
+        border-radius: 100rem;
+        & i{
+            font-size: 0.6rem;
+            flex-shrink: 0;
+        }
+    }
+
+    & span{
+        max-width: 5rem;
+         @include uti.textellip(1,null);
+    }
+}
+
+@include uti.media(max, 500px){
+    .angel-main-desc{
+        display: none;
+    }
+    .angel-main-right-mobile{
+        display: inline-block;
+        color: uti.$natural-color;
+    }
+    .angel-main-item .angel-main-right{
+        display: none;
+    }
+    .angel-main-left-mobile{
+        display: flex;
+    }
+    .angel-main-body{
+        margin-bottom: 12rem;
+    }
+}
