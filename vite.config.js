@@ -49,8 +49,13 @@ export default defineConfig({
     rollupOptions: {
       input: {
         index: path.resolve(__dirname, 'index.html'),
-        tranding: path.resolve(__dirname, 'pages/tranding.html'),
-        contact: path.resolve(__dirname, 'pages/contact.html'),
+        topic: path.resolve(__dirname, 'pages/topic.html'),
+        subscribers: path.resolve(__dirname, 'pages/subscribers.html'),
+        religion_rpirituality: path.resolve(__dirname, 'pages/religion_rpirituality.html'),
+        playlist: path.resolve(__dirname, 'pages/playlist.html'),
+        playlist_page1: path.resolve(__dirname, 'pages/playlist_page1.html'),
+        leaderboard: path.resolve(__dirname, 'pages/leaderboard.html'),
+        angel: path.resolve(__dirname, 'pages/angel.html'),
       },
     },
     outDir: 'dist',
